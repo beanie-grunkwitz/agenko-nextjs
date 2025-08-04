@@ -6,32 +6,45 @@ import React, { useState, useEffect } from 'react';
 const HeroBanner2 = () => {
     const [displayText1, setDisplayText1] = useState('');
     const [displayText2, setDisplayText2] = useState('');
+    const [displayParagraph, setDisplayParagraph] = useState('');
     const [currentIndex1, setCurrentIndex1] = useState(0);
     const [currentIndex2, setCurrentIndex2] = useState(0);
+    const [currentParagraphIndex, setCurrentParagraphIndex] = useState(0);
     const [isTyping1, setIsTyping1] = useState(false);
     const [isTyping2, setIsTyping2] = useState(false);
+    const [isTypingParagraph, setIsTypingParagraph] = useState(false);
 
     const fullText1 = "Think Global Execute";
     const fullText2 = "Korean";
+    const fullParagraph = "K1 Research is Seoul's premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea's dynamic blockchain ecosystem. Powered by Klein Labs.";
 
     useEffect(() => {
-        // 开始第一个文字的动画
+        // 同时开始所有动画
         if (!isTyping1) {
             setIsTyping1(true);
             typeText(fullText1, setDisplayText1, setCurrentIndex1, () => {
                 setIsTyping1(false);
-                // 第一个文字完成后，开始第二个文字
-                setTimeout(() => {
-                    setIsTyping2(true);
-                    typeText(fullText2, setDisplayText2, setCurrentIndex2, () => {
-                        setIsTyping2(false);
-                    });
-                }, 500); // 500ms延迟
             });
+            
+            // 第一个文字完成后，开始第二个文字
+            setTimeout(() => {
+                setIsTyping2(true);
+                typeText(fullText2, setDisplayText2, setCurrentIndex2, () => {
+                    setIsTyping2(false);
+                });
+            }, 500); // 500ms延迟
+            
+            // 段落动画从0秒开始，调整速度与标题动画同时结束
+            setIsTypingParagraph(true);
+            // 计算段落动画速度：标题约1800ms，段落约150字符，需要约12ms/字符
+            const paragraphSpeed = Math.floor(1800 / fullParagraph.length);
+            typeText(fullParagraph, setDisplayParagraph, setCurrentParagraphIndex, () => {
+                setIsTypingParagraph(false);
+            }, paragraphSpeed);
         }
     }, []);
 
-    const typeText = (text, setDisplay, setIndex, onComplete) => {
+    const typeText = (text, setDisplay, setIndex, onComplete, speed = 100) => {
         if (setIndex(0) >= text.length) {
             onComplete();
             return;
@@ -47,7 +60,7 @@ const HeroBanner2 = () => {
                 setDisplay(text.slice(0, prevIndex + 1));
                 return prevIndex + 1;
             });
-        }, 100); // 每个字母100ms
+        }, speed); // 可调节速度
     };
 
     return (
@@ -114,8 +127,34 @@ const HeroBanner2 = () => {
                                      </span>
                                  </span>
                              </h1>
-                            <div className="text-box pf_fadeup">
-                                <p style={{ width: '120%', marginLeft: 'auto', marginRight: '0', paddingRight: '0', wordWrap: 'break-word', overflowWrap: 'break-word' }}><span>K1 Research</span> is Seoul&apos;s premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea&apos;s dynamic blockchain ecosystem. Powered by Klein Labs.</p>
+                                                         <div className="text-box pf_fadeup">
+                                 <p style={{ 
+                                     width: '120%', 
+                                     marginLeft: 'auto', 
+                                     marginRight: '0', 
+                                     paddingRight: '0', 
+                                     wordWrap: 'break-word', 
+                                     overflowWrap: 'break-word',
+                                     position: 'relative',
+                                     minHeight: '4em'
+                                 }}>
+                                     <span style={{ 
+                                         visibility: displayParagraph ? 'visible' : 'hidden',
+                                         borderRight: isTypingParagraph ? '2px solid #6A47ED' : 'none',
+                                         animation: isTypingParagraph ? 'blink 0.75s step-end infinite' : 'none'
+                                     }}>
+                                         {displayParagraph}
+                                     </span>
+                                     <span style={{ 
+                                         position: 'absolute',
+                                         left: 0,
+                                         top: 0,
+                                         visibility: 'hidden',
+                                         width: '100%'
+                                     }}>
+                                         {fullParagraph}
+                                     </span>
+                                 </p>
                                 <div className="hero-button">
                                     <Link href="https://x.com/K1_Research" className="theme-btn style-one">
                                         <span className="text-flip">
