@@ -7449,3 +7449,16 @@ h1, h2, h3, h4, h5, h6 {
 .agenko-blog-item:hover {
   transform: none;
 }
+/* Disable hover effects on blog items */
+.post-hover-wrap .agk-button { display: none; }
+.agenko-blog-item:hover { transform: none; }
+.post-hover-wrap { background-image: none; }
+.post-hover-wrap:hover { background-image: none; }
+.post-hover-wrap::before { display: none; }
+.post-hover-wrap::after { display: none; }
+.post-hover-wrap { background: none; background-image: none; }
+.post-hover-wrap:hover { background: none; background-image: none; }
+.post-hover-wrap.bg_cover { background: none; background-image: none; }
+.post-hover-wrap.bg_cover:hover { background: none; background-image: none; }
+[data-background] { background: none; background-image: none; }
+.post-hover-wrap[data-background] { background: none; background-image: none; }

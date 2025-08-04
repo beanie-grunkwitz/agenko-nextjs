@@ -7,9 +7,9 @@ import Image from 'next/image';
 const Blog2 = () => {
 
     const blogContent = [
-        {img:'/assets/images/digital-agency/blog/blog1.jpg', title:'How to Start a Blog Beginner Best',authorImg:'/assets/images/digital-agency/blog/author1.jpg'},
-        {img:'/assets/images/digital-agency/blog/blog1.jpg', title:'How to Start a Blog Beginner Best',authorImg:'/assets/images/digital-agency/blog/author2.jpg'},
-        {img:'/assets/images/digital-agency/blog/blog1.jpg', title:'How to Start a Blog Beginner Best',authorImg:'/assets/images/digital-agency/blog/author1.jpg'},
+        {img:'/assets/images/digital-agency/blog/blog1.jpg', time: "April 21st, 2025", link: "https://mirror.xyz/kleinlabs.eth/z42bRcIRj_wPV_XXqNlCLNh1X8MqCRoLuuRJX6WuplU", title:'2024 CEX Listing Effect Report',authorImg:'/images/logo.png'},
+        {img:'/assets/images/digital-agency/blog/blog1.jpg',time: "June 20th, 2025",link: "https://mirror.xyz/kleinlabs.eth/_MGTVfTgp1-JqJaqsa5SrGdjVXq44YQJH2vb5F3p2a4", title:'South Korea Crypto Insight: A Market Fueled by the Kimchi Premium?',authorImg:'/images/logo.png'},
+        {img:'/assets/images/digital-agency/blog/blog1.jpg',time: "June 3rd, 2025",link: "https://mirror.xyz/kleinlabs.eth/f-M8QqM2bxDndUjvEgafBqdmbUn1zwKHBdJURt1EH5c", title:'Strong faith after: why SUI still has long-term growth potential',authorImg:'/images/logo.png'},
       ]; 
 
       useEffect(() => {
@@ -43,16 +43,6 @@ const Blog2 = () => {
             {blogContent.map((item, i) => (
                 <div key={i} className="col-lg-12">
                     <div className="agenko-blog-item style-one mb-40 pf_fadeup">
-                        <div className="post-hover-wrap bg_cover" data-background={item.img}>
-                            <div className="agk-button">
-                                <Link href="/blog/blog-details" className="theme-btn style-one">
-                                    <span className="text-flip">
-                                        <span className="text">Read More</span>
-                                        <span className="text">Read More</span>
-                                    </span>
-                                </Link>
-                            </div>
-                        </div>
                         <div className="post-inner-wrap">
                             <div className="author-item">
                                 <div className="author-thumb">
@@ -60,19 +50,18 @@ const Blog2 = () => {
                                 </div>
                                 <div className="author-info">
                                     <span>Posted By</span>
-                                    <h4>Mr. David Liam</h4>
+                                    <h4>K1 Research</h4>
                                 </div>
                             </div>
                             <div className="post-content">
                                 <h3 className="title"><Link href="/blog/blog-details">{item.title}</Link></h3>
                                 <div className="post-categories">
-                                    <a href="#">Website</a>
-                                    <a href="#">Landing Page</a>
+                                    <a href={item.link}>Mirror</a>
                                 </div>
                             </div>
                             <div className="post-date">
                             <i className="bi bi-calendar-check"></i>
-                                <a href="#">01 January 2025</a>
+                                <a href="#">{item.time}</a>
                             </div>
                         </div>
                     </div>
