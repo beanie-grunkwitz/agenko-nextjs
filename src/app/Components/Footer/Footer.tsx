@@ -1,8 +1,19 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 const Footer = () => {
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handleSubscribe = (e) => {
+        e.preventDefault();
+        setShowPopup(true);
+        setTimeout(() => {
+            setShowPopup(false);
+        }, 3000);
+    };
+
     return (
             <footer className="agenko-footer gray-dark pt-130 primary-black-bg">
                     <div className="shape shape-one"><span><Image className="rotate360" src="/assets/images/creative-agency/footer/element1.png" alt="Shape" width={50} height={50} /></span></div>
@@ -17,35 +28,21 @@ const Footer = () => {
                                     
                                     <div className="footer-widget footer-about-widget mb-40 pf_fadeup">
                                         <div className="footer-content">
-                                            <div className="footer-logo">
-                                                 
-                                                <a href="#"> <Image src="/assets/images/creative-agency/logo/logo-main.png" alt="img" width={151} height={40}   /></a>
-                                            </div>
-                                            <p>Agenko creative digital agency delivering innovate web Development marketing.</p>
-                                            <form>
-                                                <div className="form-group">
-                                                    <input type="email" className="form_control" placeholder="Email Address" name="email" required />
-                                                    <label><i className="far fa-envelope"></i></label>
-                                                    <button className="theme-btn style-two">Subscribe</button>
-                                                </div>
-                                            </form>
+                                            {/* <div className="footer-logo"> */}
+                                                <a href="#"> <Image src="/images/light-logo.png" alt="img" width={151} height={40} style={{marginBottom:5}}   /></a>
+                                            {/* </div> */}
+                                            <p>K1 Research is Seoul's premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea's dynamic blockchain ecosystem. Powered by Klein Labs.</p>
+                                                                                         <form onSubmit={handleSubscribe}>
+                                                 <div className="form-group">
+                                                     <input type="email" className="form_control" placeholder="Email Address" name="email" required />
+                                                     <label><i className="far fa-envelope"></i></label>
+                                                     <button type="submit" className="theme-btn style-two">Subscribe</button>
+                                                 </div>
+                                             </form>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-3 col-md-6">
-                                    
-                                    <div className="footer-widget footer-contact-info-widget mb-40 pf_fadeup">
-                                        <div className="footer-content mb-25">
-                                            <h4 className="widget-title">Main Address</h4>
-                                            <p>6801 Hollywood Blvd, Los Angeles, CA 90028</p>
-                                        </div>
-                                        <div className="footer-content mb-25">
-                                            <h4 className="widget-title">Sub-Address</h4>
-                                            <p>200 Santa Monica Pier, Santa Monica, CA 90401</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-5 col-md-12 col-sm-12">
+                                <div className="col-lg-6 col-md-12 col-sm-12">
                                     <div className="row">
                                         <div className="col-md-5">
                                             
@@ -54,19 +51,22 @@ const Footer = () => {
                                                     <h4 className="widget-title">Our Link</h4>
                                                     <ul className="footer-nav">
                                                         <li>
-                                                            <Link href="/about">About us</Link>
+                                                            <Link href="/about">Home</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="/service">Services</Link>
+                                                            <Link href="/service">About</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="/project">Our Project</Link>
+                                                            <Link href="/project">Service</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="/faq">FAQ</Link>
+                                                            <Link href="/faq">Client</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="/contact">Contact us</Link>
+                                                            <Link href="/contact">Team</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="/contact">Contact</Link>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -77,23 +77,21 @@ const Footer = () => {
                                             <div className="footer-widget footer-contact-widget mb-40 pf_fadeup">
                                                 <div className="footer-content">
                                                     <h4 className="widget-title">Contact</h4>
-                                                    <div className="agenko-iconic-box style-three mb-30">
-                                                        <div className="icon">
-                                                        <i className="bi bi-envelope"></i>
-                                                        </div>
-                                                        <div className="content">
-                                                            <h6>Email</h6>
-                                                            <p><a href="mailto:info@agenko.com">info@agenko.com</a></p>
-                                                        </div>
+                                                    <div className="content mb-20">
+                                                        <h6>Email</h6>
+                                                        <p><a href="mailto:info@k1research.com">info@k1research.com</a></p>
                                                     </div>
-                                                    <div className="agenko-iconic-box style-three">
-                                                        <div className="icon">
-                                                        <i className="bi bi-telephone"></i>
-                                                        </div>
-                                                        <div className="content">
-                                                            <h6>Phone</h6>
-                                                            <p><a href="tel:+555-7659-9854">+555-7659-9854</a></p>
-                                                        </div>
+                                                    <div className="content mb-20">
+                                                        <h6>Binance Square</h6>
+                                                        <p><a href="https://app.binance.com/uni-qr/cpro/K1_Research" target="_blank" rel="noopener noreferrer">https://app.binance.com/uni-qr/cpro/K1_Research</a></p>
+                                                    </div>
+                                                    <div className="content mb-20">
+                                                        <h6>Telegram Channel</h6>
+                                                        <p><a href="https://t.me/k1_research" target="_blank" rel="noopener noreferrer">https://t.me/k1_research</a></p>
+                                                    </div>
+                                                    <div className="content">
+                                                        <h6>X (Twitter)</h6>
+                                                        <p><a href="https://x.com/k1_research" target="_blank" rel="noopener noreferrer">https://x.com/k1_research</a></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -106,27 +104,36 @@ const Footer = () => {
 
                     <div className="footer-copyright">
                         <div className="container">
-                            <div className="row">
-                                <div className="col-md-6">
-                                   
-                                    <div className="copyright-text">
-                                        <p>&copy; 2025 <span>Agenko</span> - All Rights Reserved.</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    
-                                    <div className="copyright-nav">
-                                        <ul>
-                                            <li><a href="#">Terms & Condition</a></li>
-                                            <li><a href="#">Privacy Policy</a></li>
-                                            <li><a href="#">Contact</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+
+                            <div className="copyright-text">
+                                <p>&copy; 2025 <span>K1 Research</span> - All Rights Reserved.</p>
                             </div>
+
                         </div>
-                    </div>
-                </footer>
+                                         </div>
+                     
+                     {/* Subscription Success Popup */}
+                     {showPopup && (
+                         <div style={{
+                             position: 'fixed',
+                             top: '50%',
+                             left: '50%',
+                             transform: 'translate(-50%, -50%)',
+                             backgroundColor: '#6A47ED',
+                             color: 'white',
+                             padding: '20px 30px',
+                             borderRadius: '10px',
+                             zIndex: 9999,
+                             boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+                             animation: 'fadeInOut 3s ease-in-out'
+                         }}>
+                             <div style={{ textAlign: 'center' }}>
+                                 <i className="bi bi-check-circle" style={{ fontSize: '24px', marginBottom: '10px', display: 'block' }}></i>
+                                 <strong>Subscription successfully!</strong>
+                             </div>
+                         </div>
+                     )}
+                 </footer>
     );
 };
 

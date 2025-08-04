@@ -4138,6 +4138,8 @@ label {
 .author-item .author-thumb img {
   width: 100%;
   border-radius: 50%;
+  background: none;
+  border: none;
 }
 .author-item .author-info h4 {
   margin-bottom: 10px;
@@ -7462,3 +7464,11 @@ h1, h2, h3, h4, h5, h6 {
 .post-hover-wrap.bg_cover:hover { background: none; background-image: none; }
 [data-background] { background: none; background-image: none; }
 .post-hover-wrap[data-background] { background: none; background-image: none; }
+
+/* Subscription popup animation */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+}
