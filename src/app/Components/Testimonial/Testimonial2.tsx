@@ -40,7 +40,7 @@ const Testimonial2 = () => {
         {subtitle:'CEO & Founder', title:'Ms. Alex Mika', content:'Binorly Agency completely transformed our online presence! Their exceptional website development expertise went beyond expectations, creating a visually stunning and user-friendly website.'},
         {subtitle:'CEO & Founder', title:'Ms. Alex Mika', content:'Binorly Agency completely transformed our online presence! Their exceptional website development expertise went beyond expectations, creating a visually stunning and user-friendly website.'},
       ]; 
-
+    return ""
     return (
             <section className="agk-testimonial gray-dark pt-130 pb-80">
                 <div className="container">

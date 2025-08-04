@@ -17,6 +17,7 @@ const WhoWeAre = () => {
           setIframeSrc('about:blank');
           setToggle(!toggle);
         };
+    return ""
 
     return (
                     <section className="agk-who-we gray-dark pt-130 pb-70">

@@ -30,7 +30,7 @@ const Faq1 = () => {
           setFirstItemOpen(false);
         }
       }, [firstItemOpen]);
-
+    return ""
     return (
 <section className="agk-faq pt-130 pb-80">
                         <div className="container">

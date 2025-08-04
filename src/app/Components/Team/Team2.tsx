@@ -17,7 +17,7 @@ const Team2 = () => {
                 <div className="col-lg-12">
                     <div className="section-title text-center mb-50 pf_zoomIn">
                         <span className="sub-title">Our Team</span>
-                        <h2>Success Stories From Around the Globe</h2>
+                        <h2>Success Stories From K1 Research</h2>
                     </div>
                 </div>
             </div>

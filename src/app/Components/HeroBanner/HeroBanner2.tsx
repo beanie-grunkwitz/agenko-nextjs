@@ -37,45 +37,45 @@ const HeroBanner2 = () => {
                         <ul className="service-list pf_fadeup">
                             <li>
                                 
-                                <Link href="/service/service-details" className="agenko-iconic-box style-one">
+                                <Link href="/" className="agenko-iconic-box style-one">
                                     <div className="icon">
                                     <i className="bi bi-browser-edge"></i>
                                     </div>
                                     <div className="content">
-                                        <h4 className="title">Website Design Service</h4>
+                                        <h4 className="title">Media Delivery And Offline Advertising</h4>
                                     </div>
                                 </Link>
                             </li>
                             <li>
                                 
-                                <Link href="/service/service-details" className="agenko-iconic-box style-one">
+                                <Link href="/" className="agenko-iconic-box style-one">
                                     <div className="icon">
                                     <i className="bi bi-code-square"></i>
                                     </div>
                                     <div className="content">
-                                        <h4 className="title">Web Development Service</h4>
+                                        <h4 className="title">In-depth Research Report</h4>
                                     </div>
                                 </Link>
                             </li>
                             <li>
                                 
-                                <Link href="/service/service-details" className="agenko-iconic-box style-one">
+                                <Link href="/" className="agenko-iconic-box style-one">
                                     <div className="icon">
                                     <i className="bi bi-lightbulb"></i>
                                     </div>
                                     <div className="content">
-                                        <h4 className="title">Brand Strategy Solutions</h4>
+                                        <h4 className="title">Event Planning and OTC</h4>
                                     </div>
                                 </Link>
                             </li>
                             <li>
                                
-                                <Link href="/service/service-details" className="agenko-iconic-box style-one">
+                                <Link href="/" className="agenko-iconic-box style-one">
                                     <div className="icon">
                                     <i className="bi bi-megaphone"></i>
                                     </div>
                                     <div className="content">
-                                        <h4 className="title">Digital Marketing Solution</h4>
+                                        <h4 className="title">Korean KOLs And Community Resources</h4>
                                     </div>
                                 </Link>
                             </li>

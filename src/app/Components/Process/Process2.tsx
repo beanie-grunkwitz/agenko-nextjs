@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Process2 = () => {
+    return ""
     return (
                     <section className="agk-work-process pt-130 pb-100">
                         <div className="container">
