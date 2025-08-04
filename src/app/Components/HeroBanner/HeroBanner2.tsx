@@ -138,6 +138,83 @@ const HeroBanner2 = () => {
                     0% { opacity: 0; transform: scale(0.9); }
                     100% { opacity: 1; transform: scale(1); }
                 }
+                
+                /* 手机端响应式布局 */
+                @media (max-width: 768px) {
+                    .hero-content {
+                        flex-direction: column !important;
+                        gap: 30px !important;
+                    }
+                    
+                    .hero-content h1 {
+                        width: 100% !important;
+                        text-align: center !important;
+                        margin-bottom: 20px !important;
+                    }
+                    
+                    .hero-content .text-box {
+                        width: 100% !important;
+                        text-align: center !important;
+                    }
+                    
+                    .hero-content .text-box p {
+                        width: 100% !important;
+                        margin: 0 auto !important;
+                        text-align: center !important;
+                    }
+                    
+                    .hero-content .hero-button {
+                        text-align: center !important;
+                        margin-top: 20px !important;
+                    }
+                    
+                    /* 服务列表在手机端的布局 */
+                    .service-list {
+                        margin-bottom: 30px !important;
+                    }
+                    
+                    .service-list li {
+                        margin-bottom: 15px !important;
+                    }
+                    
+                    .agenko-iconic-box {
+                        padding: 15px !important;
+                    }
+                    
+                    /* 图片在手机端的布局 */
+                    .hero-image {
+                        margin-top: 20px !important;
+                    }
+                    
+                    .hero-image img {
+                        width: 100% !important;
+                        height: auto !important;
+                    }
+                    
+                    /* 确保动画在手机端正常工作 */
+                    .text-anm {
+                        width: 100% !important;
+                        text-align: center !important;
+                    }
+                    
+                    /* 调整按钮在手机端的样式 */
+                    .theme-btn {
+                        display: inline-block !important;
+                        margin: 0 auto !important;
+                    }
+                    
+                    /* 确保服务列表在手机端垂直排列 */
+                    .service-list {
+                        display: flex !important;
+                        flex-direction: column !important;
+                        gap: 15px !important;
+                    }
+                    
+                    .service-list li {
+                        width: 100% !important;
+                    }
+                }
+                }
             `}</style>
             <section className="agk-hero">
         <div className="hero-wrapper-two">
@@ -219,14 +296,14 @@ const HeroBanner2 = () => {
                              </h1>
                                                          <div className="text-box pf_fadeup">
                                  <p style={{ 
-                                     width: '120%', 
-                                     marginLeft: 'auto', 
-                                     marginRight: '0', 
-                                     paddingRight: '0', 
+                                     width: '100%', 
+                                     margin: '0 auto', 
+                                     padding: '0', 
                                      wordWrap: 'break-word', 
                                      overflowWrap: 'break-word',
                                      position: 'relative',
-                                     minHeight: '4em'
+                                     minHeight: '4em',
+                                     textAlign: 'left'
                                  }}>
                                      <span style={{ 
                                          visibility: displayParagraph ? 'visible' : 'hidden',
@@ -258,7 +335,7 @@ const HeroBanner2 = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-lg-4">
+                    <div className="col-lg-4 col-md-12 col-sm-12">
                         <ul className="service-list pf_fadeup">
                             <li>
                                 
@@ -318,7 +395,7 @@ const HeroBanner2 = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="col-lg-8">
+                    <div className="col-lg-8 col-md-12 col-sm-12">
                         
                         <div className="hero-image style-one pf_fadeup" style={{
                             animation: imageAnimation ? 'fadeIn 1.5s ease-out' : 'none',

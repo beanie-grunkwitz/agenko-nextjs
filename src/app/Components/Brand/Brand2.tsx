@@ -17,21 +17,35 @@ const Brand2 = () => {
       ];   
 
     useEffect(() => {
+        // 检查是否为手机端
+        const isMobile = window.innerWidth <= 768;
+        
+        // 在手机端立即显示所有品牌logo
+        if (isMobile) {
+            setBrandAnimations([true, true, true, true, true, true, true, true]);
+        }
+        
         // 创建 IntersectionObserver 来检测元素是否进入视口
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !titleAnimation) {
                     // 元素进入视口时开始动画序列
                     setTimeout(() => setTitleAnimation(true), 100);
-                    // 品牌logo动画 - 依次显示，创造波浪效果
-                    setTimeout(() => setBrandAnimations([true, false, false, false, false, false, false, false]), 300);
-                    setTimeout(() => setBrandAnimations([true, true, false, false, false, false, false, false]), 500);
-                    setTimeout(() => setBrandAnimations([true, true, true, false, false, false, false, false]), 700);
-                    setTimeout(() => setBrandAnimations([true, true, true, true, false, false, false, false]), 900);
-                    setTimeout(() => setBrandAnimations([true, true, true, true, true, false, false, false]), 1100);
-                    setTimeout(() => setBrandAnimations([true, true, true, true, true, true, false, false]), 1300);
-                    setTimeout(() => setBrandAnimations([true, true, true, true, true, true, true, false]), 1500);
-                    setTimeout(() => setBrandAnimations([true, true, true, true, true, true, true, true]), 1700);
+                    
+                    // 在手机端立即显示所有品牌logo，在桌面端使用动画
+                    if (isMobile) {
+                        setBrandAnimations([true, true, true, true, true, true, true, true]);
+                    } else {
+                        // 品牌logo动画 - 依次显示，创造波浪效果
+                        setTimeout(() => setBrandAnimations([true, false, false, false, false, false, false, false]), 300);
+                        setTimeout(() => setBrandAnimations([true, true, false, false, false, false, false, false]), 500);
+                        setTimeout(() => setBrandAnimations([true, true, true, false, false, false, false, false]), 700);
+                        setTimeout(() => setBrandAnimations([true, true, true, true, false, false, false, false]), 900);
+                        setTimeout(() => setBrandAnimations([true, true, true, true, true, false, false, false]), 1100);
+                        setTimeout(() => setBrandAnimations([true, true, true, true, true, true, false, false]), 1300);
+                        setTimeout(() => setBrandAnimations([true, true, true, true, true, true, true, false]), 1500);
+                        setTimeout(() => setBrandAnimations([true, true, true, true, true, true, true, true]), 1700);
+                    }
                 }
             },
             { threshold: 0.3 } // 当30%的元素可见时触发
@@ -118,6 +132,90 @@ const Brand2 = () => {
                         filter: brightness(1.1) drop-shadow(0 0 10px rgba(106, 71, 237, 0.3)); 
                     }
                 }
+                
+                /* 手机端响应式布局 */
+                @media (max-width: 768px) {
+                    /* 标题在手机端的优化 */
+                    .section-title {
+                        margin-bottom: 30px !important;
+                    }
+                    
+                    .section-title h2 {
+                        font-size: 2rem !important;
+                        line-height: 1.2 !important;
+                    }
+                    
+                    .section-title .sub-title {
+                        font-size: 1rem !important;
+                    }
+                    
+                    /* 品牌logo在手机端的布局 */
+                    .agenko-client-item {
+                        margin-bottom: 20px !important;
+                        padding: 15px !important;
+                        text-align: center !important;
+                    }
+                    
+                    .client-image {
+                        display: flex !important;
+                        justify-content: center !important;
+                        align-items: center !important;
+                        min-height: 80px !important;
+                    }
+                    
+                    .client-image img {
+                        max-width: 100% !important;
+                        height: auto !important;
+                        max-height: 60px !important;
+                        object-fit: contain !important;
+                    }
+                    
+                    /* 确保logo在手机端可见 */
+                    .agenko-client-item {
+                        opacity: 1 !important;
+                        transform: none !important;
+                        animation: none !important;
+                    }
+                    
+                    /* 调整列布局在手机端 */
+                    .col-sm-6 {
+                        width: 50% !important;
+                    }
+                    
+                    /* 确保容器在手机端有合适的间距 */
+                    .container {
+                        padding-left: 15px !important;
+                        padding-right: 15px !important;
+                    }
+                    
+                    /* 调整section的内边距 */
+                    .agk-client {
+                        padding-top: 80px !important;
+                        padding-bottom: 80px !important;
+                    }
+                }
+                
+                /* 超小屏幕的优化 */
+                @media (max-width: 480px) {
+                    .col-sm-6, .col-xs-12 {
+                        width: 100% !important;
+                    }
+                    
+                    .agenko-client-item {
+                        margin-bottom: 15px !important;
+                    }
+                    
+                    .client-image img {
+                        max-height: 50px !important;
+                    }
+                    
+                    /* 确保在超小屏幕上logo居中显示 */
+                    .agenko-client-item {
+                        display: flex !important;
+                        justify-content: center !important;
+                        align-items: center !important;
+                    }
+                }
             `}</style>
             <section className="agk-client gray-dark pt-130 pb-130">
                 <div className="container">
@@ -144,7 +242,7 @@ const Brand2 = () => {
                     </div>
                     <div className="row">
                         {brandContent.map((item, i) => (
-                            <div key={i} className="col-lg-3 col-md-6 col-sm-6 mb-4">
+                            <div key={i} className="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4">
                                 <div className="agenko-client-item style-one pf_fadeup" style={{
                                     animationName: brandAnimations[i] ? 'brandLogoAppear, brandLogoFloat, brandLogoGlow' : 'none',
                                     animationDuration: brandAnimations[i] ? '1s, 3s, 4s' : '0s',
