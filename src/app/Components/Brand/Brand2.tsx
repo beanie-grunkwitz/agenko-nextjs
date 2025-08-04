@@ -26,22 +26,15 @@ const Brand2 = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-12">
-                            
-                            <div className="client-list pf_fadeup">
-                                <ul>
-                                {brandContent.map((item, i) => (
-                                    <li key={i}>
-                                        <div className="agenko-client-item style-one">
-                                            <div className="client-image">
-                                                <img src={item.img} alt="client img" />
-                                            </div>
-                                        </div>
-                                    </li>
-                                    ))} 
-                                </ul>
+                        {brandContent.map((item, i) => (
+                            <div key={i} className="col-lg-3 col-md-6 col-sm-6 mb-4">
+                                <div className="agenko-client-item style-one pf_fadeup">
+                                    <div className="client-image">
+                                        <img src={item.img} alt="client img" />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>

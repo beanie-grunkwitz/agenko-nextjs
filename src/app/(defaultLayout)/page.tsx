@@ -29,13 +29,13 @@ const page = () => {
             <div id="team">
                 <Team2></Team2>
             </div>
-            <div id="contact">
-                <WhoWeAre></WhoWeAre>
-            </div>
+            <WhoWeAre></WhoWeAre>
             <Process2></Process2>
             <Testimonial2></Testimonial2>
             <Faq1></Faq1>
+
             <Brand2></Brand2>  
+            <div id="contact"></div>
         </div>
     );
 };

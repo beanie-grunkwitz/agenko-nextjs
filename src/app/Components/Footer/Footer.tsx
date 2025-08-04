@@ -24,12 +24,12 @@ const Footer = () => {
                     <div className="footer-widget-area pb-80">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-4 col-md-6 col-sm-6">
+                                <div className="col-lg-4 offset-lg-2 col-md-6 col-sm-6">
                                     
                                     <div className="footer-widget footer-about-widget mb-40 pf_fadeup">
                                         <div className="footer-content">
                                             {/* <div className="footer-logo"> */}
-                                                <a href="#"> <Image src="/images/light-logo.png" alt="img" width={151} height={40} style={{marginBottom:5}}   /></a>
+                                                <a href="#"> <Image src="/images/light-logo.png" alt="img" width={151} height={40} style={{marginBottom:5, objectFit:'contain'}}   /></a>
                                             {/* </div> */}
                                                                                          <p>K1 Research is Seoul&apos;s premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea&apos;s dynamic blockchain ecosystem. Powered by Klein Labs.</p>
                                                                                          <form onSubmit={handleSubscribe}>
@@ -67,7 +67,7 @@ const Footer = () => {
                                                         </li>
                                                         <li>
                                                             <a href="#client" onClick={(e) => { e.preventDefault(); document.getElementById('client')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                                                                Client
+                                                            Report
                                                             </a>
                                                         </li>
                                                         <li>
@@ -118,8 +118,8 @@ const Footer = () => {
                         <div className="container">
 
                             <div className="copyright-text">
-                                <p>&copy; 2025 <span>K1 Research</span> - All Rights Reserved.</p>
-                            </div>
+                                 <p style={{ textAlign: 'center', color: '#808080' }}>&copy; 2025 K1 Research - All Rights Reserved.</p>
+                             </div>
 
                         </div>
                                          </div>

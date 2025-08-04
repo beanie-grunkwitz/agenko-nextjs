@@ -13,13 +13,13 @@ const HeroBanner2 = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
-                        <div className="hero-content">
+                        <div className="hero-content" style={{width:'100%', display:'flex', justifyContent:'space-between'}}>
                             <h1>
                                 <span className="text-anm">Think Global Execute</span>
                                 <span className="text-anm">Korean</span>
                             </h1>
                             <div className="text-box pf_fadeup">
-                                <p><span>K1 Research</span> is Seoul&apos;s premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea&apos;s dynamic blockchain ecosystem. Powered by Klein Labs.</p>
+                                <p style={{ width: '120%', marginLeft: 'auto', marginRight: '0', paddingRight: '0', wordWrap: 'break-word', overflowWrap: 'break-word' }}><span>K1 Research</span> is Seoul&apos;s premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea&apos;s dynamic blockchain ecosystem. Powered by Klein Labs.</p>
                                 <div className="hero-button">
                                     <Link href="https://x.com/K1_Research" className="theme-btn style-one">
                                         <span className="text-flip">

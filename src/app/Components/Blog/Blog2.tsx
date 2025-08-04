@@ -24,13 +24,13 @@ const Blog2 = () => {
                     
                     <div className="section-title mb-50 pf_fadeup">
                         <span className="sub-title">Latest Blog</span>
-                        <h2>Our Global Client</h2>
+                        <h2>Our Blogs</h2>
                     </div>
                 </div>
                 <div className="col-lg-6">
                     
                     <div className="agk-button float-lg-end mb-60 pf_fadeup">
-                        <a href="blog-grid.html" className="theme-btn style-one">
+                        <a href="https://mirror.xyz/kleinlabs.eth" className="theme-btn style-one">
                             <span className="text-flip">
                                 <span className="text">View All Blogs</span>
                                 <span className="text">View All Blogs</span>
@@ -42,24 +42,24 @@ const Blog2 = () => {
             <div className="row">
             {blogContent.map((item, i) => (
                 <div key={i} className="col-lg-12">
-                    <div className="agenko-blog-item style-one mb-40 pf_fadeup">
-                        <div className="post-inner-wrap">
-                            <div className="author-item">
-                                <div className="author-thumb">
+                    <div className="agenko-blog-item style-one mb-40 pf_fadeup" style={{ padding: '5px' }}>
+                        <div className="post-inner-wrap" style={{ padding: '5px' }}>
+                            <div className="author-item" style={{ padding: '2px' }}>
+                                <div className="author-thumb" style={{ padding: '2px' }}>
                                     <Image src={item.authorImg} alt="Author Image" width={50} height={50} />
                                 </div>
-                                <div className="author-info">
+                                <div className="author-info" style={{ padding: '2px' }}>
                                     <span>Posted By</span>
                                     <h4>K1 Research</h4>
                                 </div>
                             </div>
-                            <div className="post-content">
+                            <div className="post-content" style={{ padding: '5px' }}>
                                 <h3 className="title"><Link href="/blog/blog-details">{item.title}</Link></h3>
-                                <div className="post-categories">
+                                <div className="post-categories" style={{ padding: '2px' }}>
                                     <a href={item.link}>Mirror</a>
                                 </div>
                             </div>
-                            <div className="post-date">
+                            <div className="post-date" style={{ padding: '2px' }}>
                             <i className="bi bi-calendar-check"></i>
                                 <a href="#">{item.time}</a>
                             </div>

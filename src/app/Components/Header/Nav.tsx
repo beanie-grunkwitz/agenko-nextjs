@@ -32,7 +32,7 @@ export default function Nav({ setMobileToggle }) {
       </li>
       <li>
         <a href="#client" onClick={(e) => { e.preventDefault(); handleNavClick('client'); }}>
-          Client
+          Report
         </a>
       </li>
       <li>
