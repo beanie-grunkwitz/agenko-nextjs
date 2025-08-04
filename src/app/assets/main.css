@@ -42,7 +42,7 @@ Version: 1.0
 /* Base CSS */
 
 :root {
-  --primary-color: #9CFE4F;
+  --primary-color: #6A47ED;
   --heading-color: #1A1A1A;
   --primary-black-color: #0E0F11;
   --white-color: #ffffff;
@@ -6632,10 +6632,7 @@ label {
 }
 .cs_site_branding {
   display: inline-block;
-  border: 1px solid var(--border-color);
-    text-align: center;
-    padding: 3px 5px;
-    border-radius: 40px;
+  text-align: center;
 }
 .cs_site_branding + .cs_nav {
   margin-left: 65px;
@@ -6835,13 +6832,13 @@ label {
   color: #fff !important;
 }
 .header_style_3.cs-gescout_show{
-  background-color: #2b00a5;
+  background-color: transparent;
 }
 .header_sticky_style1.cs-gescout_sticky{
-  background-color: #6a47ed;
+  background-color: transparent;
 }
 .header_sticky_style1.cs_site_header.header_style_2.cs_style_1 .container::before {
-  background-color: #6a47ed;
+  background-color: transparent;
 }
 .header_sticky_style1.cs-gescout_sticky .cs_nav .cs_nav_list>li>a{
   color: #fff;
@@ -7173,7 +7170,7 @@ label {
   opacity: 0;
 }
 .cs_site_header.header_style_2.cs_style_1.cs-gescout_sticky .container::before {
-  opacity: 1;
+  opacity: 0;
 }
 @media (max-width: 767px) {
   .cs_site_header.cs_style_1 .cs_top_header {
@@ -7238,7 +7235,7 @@ label {
   top: 0;
 }
 .header_style_3.cs-gescout_show .container::before{
-  background-color: #2b00a5 !important;
+  background-color: transparent !important;
 }
 .accordion-area2 .accordion-button{
   background-color: transparent;
@@ -7297,4 +7294,11 @@ label {
 }
 .agenko-accordion-item.active .accordion-content{
   display: block;
+}
+.no-wrap {
+  white-space: nowrap;
+}
+
+.smaller-text {
+  font-size: 0.85em;
 }

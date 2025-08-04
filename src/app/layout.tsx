@@ -8,11 +8,16 @@ const source_sans = Source_Sans_3({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--heading-font',
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
 });
+
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   variable: '--body-font',
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
 });
 
 export const metadata = {
@@ -26,6 +31,9 @@ export const metadata = {
     title: 'Agenko - Creative Digital Agency NextJS Template',
     description: 'Agenko - Creative Digital Agency NextJS Template',
   },
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({ children } : any ) {
@@ -33,7 +41,6 @@ export default function RootLayout({ children } : any ) {
     <html lang="en">
       <head>
         <meta name="author" content="Themeservices" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={`${source_sans.variable} ${roboto.variable}`}>
         {children}

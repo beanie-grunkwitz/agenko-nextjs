@@ -42,7 +42,7 @@ export default function Header1({ variant }: any) {
           <div className="cs_main_header_in">
             <div className="cs_main_header_left">
             <Link className="cs_site_branding" href="/">
-            <Image src="/assets/images/creative-agency/logo/logo-main.png" alt="img" width={151} height={40}   />
+            <Image src="/images/light-logo.png" alt="V1 RESEARCH Logo" width={151} height={40} />
               </Link>
               </div>
               <div className="cs_main_header_center">
@@ -64,7 +64,7 @@ export default function Header1({ variant }: any) {
               <div className="header-btn d-flex align-items-center">
 
                 <div className="main-button">
-                <Link href="/contact" className="theme-btn style-one">
+                <Link href="https://x.com/K1_Research" target="_blank" rel="noopener noreferrer" className="theme-btn style-one">
                     <span className="text-flip">
                         <span className="text">LETS TALK</span>
                         <span className="text">LETS TALK</span>
