@@ -1,8 +1,71 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const About1 = () => {
+    const [count1, setCount1] = useState(0);
+    const [count2, setCount2] = useState(0);
+    const [isVisible1, setIsVisible1] = useState(false);
+    const [isVisible2, setIsVisible2] = useState(false);
+    const counter1Ref = useRef(null);
+    const counter2Ref = useRef(null);
+
+    useEffect(() => {
+        const observer1 = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !isVisible1) {
+                    setIsVisible1(true);
+                    animateCount(100, setCount1);
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        const observer2 = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !isVisible2) {
+                    setIsVisible2(true);
+                    animateCount(50, setCount2);
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        if (counter1Ref.current) {
+            observer1.observe(counter1Ref.current);
+        }
+        if (counter2Ref.current) {
+            observer2.observe(counter2Ref.current);
+        }
+
+        return () => {
+            if (counter1Ref.current) {
+                observer1.unobserve(counter1Ref.current);
+            }
+            if (counter2Ref.current) {
+                observer2.unobserve(counter2Ref.current);
+            }
+        };
+    }, [isVisible1, isVisible2]);
+
+    const animateCount = (target, setCount) => {
+        const duration = 2000; // 2秒动画
+        const steps = 60; // 60步
+        const increment = target / steps;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                setCount(target);
+                clearInterval(timer);
+            } else {
+                setCount(Math.floor(current));
+            }
+        }, duration / steps);
+    };
+
     return (
         <section className="agk-about pt-130 pb-80">
         <div className="container">
@@ -26,18 +89,18 @@ const About1 = () => {
                     <ul>
                         <li>
                             
-                            <div className="agenko-counter-box style-one">
+                            <div className="agenko-counter-box style-one" ref={counter1Ref}>
                                 <div className="content">
-                                    <h2 className="mb-10"><span className="count">100+</span></h2>
+                                    <h2 className="mb-10"><span className="count">{count1}+</span></h2>
                                     <p>Deep web3 research report</p>
                                 </div>
                             </div>
                         </li>
                         <li>
                             
-                            <div className="agenko-counter-box style-one">
+                            <div className="agenko-counter-box style-one" ref={counter2Ref}>
                                 <div className="content">
-                                    <h2 className="mb-10"><span className="count">50+</span></h2>
+                                    <h2 className="mb-10"><span className="count">{count2}+</span></h2>
                                     <p>In-depth cooperative customers</p>
                                 </div>
                             </div>

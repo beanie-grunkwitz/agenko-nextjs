@@ -1,10 +1,64 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const HeroBanner2 = () => {
+    const [displayText1, setDisplayText1] = useState('');
+    const [displayText2, setDisplayText2] = useState('');
+    const [currentIndex1, setCurrentIndex1] = useState(0);
+    const [currentIndex2, setCurrentIndex2] = useState(0);
+    const [isTyping1, setIsTyping1] = useState(false);
+    const [isTyping2, setIsTyping2] = useState(false);
+
+    const fullText1 = "Think Global Execute";
+    const fullText2 = "Korean";
+
+    useEffect(() => {
+        // 开始第一个文字的动画
+        if (!isTyping1) {
+            setIsTyping1(true);
+            typeText(fullText1, setDisplayText1, setCurrentIndex1, () => {
+                setIsTyping1(false);
+                // 第一个文字完成后，开始第二个文字
+                setTimeout(() => {
+                    setIsTyping2(true);
+                    typeText(fullText2, setDisplayText2, setCurrentIndex2, () => {
+                        setIsTyping2(false);
+                    });
+                }, 500); // 500ms延迟
+            });
+        }
+    }, []);
+
+    const typeText = (text, setDisplay, setIndex, onComplete) => {
+        if (setIndex(0) >= text.length) {
+            onComplete();
+            return;
+        }
+
+        const interval = setInterval(() => {
+            setIndex(prevIndex => {
+                if (prevIndex >= text.length) {
+                    clearInterval(interval);
+                    onComplete();
+                    return prevIndex;
+                }
+                setDisplay(text.slice(0, prevIndex + 1));
+                return prevIndex + 1;
+            });
+        }, 100); // 每个字母100ms
+    };
+
     return (
-        <section className="agk-hero">
+        <>
+            <style jsx>{`
+                @keyframes blink {
+                    0%, 50% { border-color: transparent; }
+                    51%, 100% { border-color: #6A47ED; }
+                }
+            `}</style>
+            <section className="agk-hero">
         <div className="hero-wrapper-two">
             <div className="shape shape-one"><span><Image className="rotate360" src="/assets/images/digital-agency/hero/shape/shape1.png" alt="img" width={50} height={50}   /></span></div>
             {/* <div className="shape shape-two"><span><Image className="animate-float-bob-y " src="/assets/images/digital-agency/hero/shape/shape2.png" alt="img" width={40} height={80}   /></span></div> */}
@@ -14,10 +68,52 @@ const HeroBanner2 = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="hero-content" style={{width:'100%', display:'flex', justifyContent:'space-between'}}>
-                            <h1>
-                                <span className="text-anm">Think Global Execute</span>
-                                <span className="text-anm">Korean</span>
-                            </h1>
+                                                         <h1 style={{ width: '100%' }}>
+                                 <span className="text-anm" style={{ 
+                                     display: 'block',
+                                     overflow: 'hidden',
+                                     borderRight: isTyping1 ? '2px solid #6A47ED' : 'none',
+                                     animation: isTyping1 ? 'blink 0.75s step-end infinite' : 'none',
+                                     width: '100%',
+                                     position: 'relative',
+                                     minHeight: '2.3em'
+                                 }}>
+                                     <span style={{ visibility: displayText1 ? 'visible' : 'hidden' }}>
+                                         {displayText1}
+                                     </span>
+                                     <span style={{ 
+                                         position: 'absolute',
+                                         left: 0,
+                                         top: 0,
+                                         visibility: 'hidden',
+                                         width: '100%'
+                                     }}>
+                                         {fullText1}
+                                     </span>
+                                 </span>
+                                 <span className="text-anm" style={{ 
+                                     display: 'block',
+                                     overflow: 'hidden',
+                                     borderRight: isTyping2 ? '2px solid #6A47ED' : 'none',
+                                     animation: isTyping2 ? 'blink 0.75s step-end infinite' : 'none',
+                                     width: '100%',
+                                     position: 'relative',
+                                     minHeight: '1.2em'
+                                 }}>
+                                     <span style={{ visibility: displayText2 ? 'visible' : 'hidden' }}>
+                                         {displayText2}
+                                     </span>
+                                     <span style={{ 
+                                         position: 'absolute',
+                                         left: 0,
+                                         top: 0,
+                                         visibility: 'hidden',
+                                         width: '100%'
+                                     }}>
+                                         {fullText2}
+                                     </span>
+                                 </span>
+                             </h1>
                             <div className="text-box pf_fadeup">
                                 <p style={{ width: '120%', marginLeft: 'auto', marginRight: '0', paddingRight: '0', wordWrap: 'break-word', overflowWrap: 'break-word' }}><span>K1 Research</span> is Seoul&apos;s premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea&apos;s dynamic blockchain ecosystem. Powered by Klein Labs.</p>
                                 <div className="hero-button">
@@ -88,10 +184,11 @@ const HeroBanner2 = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    );
-};
+                         </div>
+         </div>
+     </section>
+     </>
+     );
+ };
 
 export default HeroBanner2;
