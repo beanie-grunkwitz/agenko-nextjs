@@ -3,16 +3,14 @@ import React from 'react';
 const Brand2 = () => {
 
     const brandContent = [
-        {img:'/assets/images/creative-agency/client/client1.png'},
-        {img:'/assets/images/creative-agency/client/client2.png'},
-        {img:'/assets/images/creative-agency/client/client3.png'},
-        {img:'/assets/images/creative-agency/client/client4.png'},
-        {img:'/assets/images/creative-agency/client/client5.png'},
-        {img:'/assets/images/creative-agency/client/client6.png'},
-        {img:'/assets/images/digital-agency/client/client7.png'},
-        {img:'/assets/images/digital-agency/client/client8.png'},
-        {img:'/assets/images/digital-agency/client/client9.png'},
-        {img:'/assets/images/digital-agency/client/client10.png'},
+        {img:'/images/client/Trusta.AI.svg'},
+        {img:'/images/client/UXLink.svg'},
+        {img:'/images/client/OKX.svg'},
+        {img:'/images/client/ODOS.svg'},
+        {img:'/images/client/Hashkey.svg'},
+        {img:'/images/client/KiloEx.svg'},
+        {img:'/images/client/Catizen.svg'},
+        {img:'/images/client/Aethir.svg'},
       ];   
 
     return (

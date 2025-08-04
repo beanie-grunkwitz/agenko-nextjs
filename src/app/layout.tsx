@@ -6,13 +6,13 @@ import "./assets/main.css";
 export const metadata = {
   title: {
     absolute: '',
-    default: 'Agenko - Creative Digital Agency NextJS Template',
-    template: '%s | Agenko - Creative Digital Agency NextJS Template',
+    default: 'Think Global. Execute Korean',
+    template: 'Think Global. Execute Korean',
   },
-  description: 'Agenko - Creative Digital Agency NextJS Template',
+  description: 'Think Global. Execute Korean',
   openGraph: {
-    title: 'Agenko - Creative Digital Agency NextJS Template',
-    description: 'Agenko - Creative Digital Agency NextJS Template',
+    title: 'Think Global. Execute Korean',
+    description: 'Think Global. Execute Korean',
   },
   icons: {
     icon: '/favicon.ico',

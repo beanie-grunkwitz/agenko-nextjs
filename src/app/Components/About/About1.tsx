@@ -49,7 +49,7 @@ const About1 = () => {
                     
                     <div className="agk-image-box style-one mb-50 pf_fadeup">
                         <div className="agk-image">
-                        <Image src="/assets/images/digital-agency/about/about1.jpg" alt="img" width={440} height={532}   />
+                        <Image src="/images/440_532.png" alt="img" width={440} height={532}   />
                         </div>
                         <div className="agenko-experince-box style-one">
                             <h2><span>K1</span></h2>

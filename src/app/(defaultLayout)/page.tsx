@@ -18,7 +18,6 @@ const page = () => {
             <About1></About1>
             <Services2></Services2>
             <Blog2></Blog2>   
-            <Project2></Project2>
             <WhoWeAre></WhoWeAre>
             <Process2></Process2>
             <Testimonial2></Testimonial2>
