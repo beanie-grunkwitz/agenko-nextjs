@@ -8,10 +8,34 @@ const About1 = () => {
     const [count2, setCount2] = useState(0);
     const [isVisible1, setIsVisible1] = useState(false);
     const [isVisible2, setIsVisible2] = useState(false);
+    const [titleAnimation, setTitleAnimation] = useState(false);
+    const [paragraphAnimation, setParagraphAnimation] = useState(false);
+    const [buttonAnimation, setButtonAnimation] = useState(false);
+    const [imageAnimation, setImageAnimation] = useState(false);
     const counter1Ref = useRef(null);
     const counter2Ref = useRef(null);
 
     useEffect(() => {
+        // 创建 IntersectionObserver 来检测元素是否进入视口
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !titleAnimation) {
+                    // 元素进入视口时开始动画序列
+                    setTimeout(() => setTitleAnimation(true), 100);
+                    setTimeout(() => setParagraphAnimation(true), 300);
+                    setTimeout(() => setButtonAnimation(true), 500);
+                    setTimeout(() => setImageAnimation(true), 700);
+                }
+            },
+            { threshold: 0.3 } // 当30%的元素可见时触发
+        );
+
+        // 观察整个section元素
+        const sectionElement = document.querySelector('.agk-about');
+        if (sectionElement) {
+            observer.observe(sectionElement);
+        }
+
         const observer1 = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !isVisible1) {
@@ -40,6 +64,9 @@ const About1 = () => {
         }
 
         return () => {
+            if (sectionElement) {
+                observer.unobserve(sectionElement);
+            }
             if (counter1Ref.current) {
                 observer1.unobserve(counter1Ref.current);
             }
@@ -47,7 +74,7 @@ const About1 = () => {
                 observer2.unobserve(counter2Ref.current);
             }
         };
-    }, [isVisible1, isVisible2]);
+    }, [titleAnimation, isVisible1, isVisible2]);
 
     const animateCount = (target, setCount) => {
         const duration = 2000; // 2秒动画
@@ -67,18 +94,54 @@ const About1 = () => {
     };
 
     return (
-        <section className="agk-about pt-130 pb-80">
+        <>
+            <style jsx>{`
+                @keyframes fadeInUp {
+                    0% { 
+                        opacity: 0; 
+                        transform: translateY(30px); 
+                    }
+                    100% { 
+                        opacity: 1; 
+                        transform: translateY(0); 
+                    }
+                }
+                
+                @keyframes fadeInScale {
+                    0% { 
+                        opacity: 0; 
+                        transform: scale(0.9); 
+                    }
+                    100% { 
+                        opacity: 1; 
+                        transform: scale(1); 
+                    }
+                }
+            `}</style>
+            <section className="agk-about pt-130 pb-80">
         <div className="container">
             <div className="row">
                 <div className="col-xl-7">
                     
                     <div className="agk-content-box style-one mb-50 pf_fadeup">
-                        <div className="section-title mb-20">
+                        <div className="section-title mb-20" style={{
+                            animation: titleAnimation ? 'fadeInUp 0.8s ease-out' : 'none',
+                            opacity: titleAnimation ? 1 : 0,
+                            transform: titleAnimation ? 'translateY(0)' : 'translateY(30px)'
+                        }}>
                             <span className="sub-title">About K1 Research</span>
                             <h2>The K-Factor in Web3</h2>
                         </div>
-                        <p>Headquartered in Gangnam-gu, Seoul, K1 Research is a research-driven one-stop solution provider for Web3 Korean market, providing consulting and implementation services for global projects entering the Korean market. The service content covers localized operations, financing, user growth, brand marketing, business development, offline events, large-scale events and event sponsorship in the Korean market, and is your best partner to enter the Korean market. The K1 core team is a senior expert with many years of experience in Web3 in Korea, and has served many well-known projects. Key supporters of K1 Research include Klein Labs, Aquarius Capital.</p>
-                    <div className="agk-button mb-30">
+                        <p style={{
+                            animation: paragraphAnimation ? 'fadeInUp 0.8s ease-out' : 'none',
+                            opacity: paragraphAnimation ? 1 : 0,
+                            transform: paragraphAnimation ? 'translateY(0)' : 'translateY(30px)'
+                        }}>Headquartered in Gangnam-gu, Seoul, K1 Research is a research-driven one-stop solution provider for Web3 Korean market, providing consulting and implementation services for global projects entering the Korean market. The service content covers localized operations, financing, user growth, brand marketing, business development, offline events, large-scale events and event sponsorship in the Korean market, and is your best partner to enter the Korean market. The K1 core team is a senior expert with many years of experience in Web3 in Korea, and has served many well-known projects. Key supporters of K1 Research include Klein Labs, Aquarius Capital.</p>
+                    <div className="agk-button mb-30" style={{
+                        animation: buttonAnimation ? 'fadeInUp 0.8s ease-out' : 'none',
+                        opacity: buttonAnimation ? 1 : 0,
+                        transform: buttonAnimation ? 'translateY(0)' : 'translateY(30px)'
+                    }}>
                         <Link href="https://x.com/K1_Research" className="theme-btn style-one">
                             <span className="text-flip">
                                 <span className="text">LEARN MORE</span>
@@ -110,7 +173,11 @@ const About1 = () => {
                 </div>
                 <div className="col-xl-5">
                     
-                    <div className="agk-image-box style-one mb-50 pf_fadeup">
+                    <div className="agk-image-box style-one mb-50 pf_fadeup" style={{
+                        animation: imageAnimation ? 'fadeInScale 1s ease-out' : 'none',
+                        opacity: imageAnimation ? 1 : 0,
+                        transform: imageAnimation ? 'scale(1)' : 'scale(0.9)'
+                    }}>
                         <div className="agk-image">
                         <Image src="/images/440_532.png" alt="img" width={440} height={532}   />
                         </div>
@@ -124,6 +191,7 @@ const About1 = () => {
             </div>
         </div>
     </section>
+    </>
     );
 };
 

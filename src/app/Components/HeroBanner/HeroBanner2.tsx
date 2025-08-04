@@ -6,43 +6,92 @@ import React, { useState, useEffect } from 'react';
 const HeroBanner2 = () => {
     const [displayText1, setDisplayText1] = useState('');
     const [displayText2, setDisplayText2] = useState('');
+    const [displayText3, setDisplayText3] = useState('');
     const [displayParagraph, setDisplayParagraph] = useState('');
     const [currentIndex1, setCurrentIndex1] = useState(0);
     const [currentIndex2, setCurrentIndex2] = useState(0);
+    const [currentIndex3, setCurrentIndex3] = useState(0);
     const [currentParagraphIndex, setCurrentParagraphIndex] = useState(0);
     const [isTyping1, setIsTyping1] = useState(false);
     const [isTyping2, setIsTyping2] = useState(false);
+    const [isTyping3, setIsTyping3] = useState(false);
     const [isTypingParagraph, setIsTypingParagraph] = useState(false);
+    const [shakeAnimation, setShakeAnimation] = useState(false);
+    const [imageAnimation, setImageAnimation] = useState(false);
+    const [hasAnimated, setHasAnimated] = useState(false);
 
-    const fullText1 = "Think Global Execute";
-    const fullText2 = "Korean";
+    const fullText1 = "Think Global";
+    const fullText2 = "Execute";
+    const fullText3 = "Korean";
     const fullParagraph = "K1 Research is Seoul's premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea's dynamic blockchain ecosystem. Powered by Klein Labs.";
 
     useEffect(() => {
-        // 同时开始所有动画
-        if (!isTyping1) {
-            setIsTyping1(true);
-            typeText(fullText1, setDisplayText1, setCurrentIndex1, () => {
-                setIsTyping1(false);
-            });
-            
-            // 第一个文字完成后，开始第二个文字
-            setTimeout(() => {
-                setIsTyping2(true);
-                typeText(fullText2, setDisplayText2, setCurrentIndex2, () => {
-                    setIsTyping2(false);
-                });
-            }, 500); // 500ms延迟
-            
-            // 段落动画从0秒开始，调整速度与标题动画同时结束
-            setIsTypingParagraph(true);
-            // 计算段落动画速度：标题约1800ms，段落约150字符，需要约12ms/字符
-            const paragraphSpeed = Math.floor(1800 / fullParagraph.length);
-            typeText(fullParagraph, setDisplayParagraph, setCurrentParagraphIndex, () => {
-                setIsTypingParagraph(false);
-            }, paragraphSpeed);
+        // 创建 IntersectionObserver 来检测元素是否进入视口
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    // 设置动画已播放标志，防止重复播放
+                    setHasAnimated(true);
+                    
+                    // 元素进入视口时开始动画
+                    setIsTyping1(true);
+                    typeText(fullText1, setDisplayText1, setCurrentIndex1, () => {
+                        setIsTyping1(false);
+                    });
+                    
+                    // 第一个文字完成后，开始第二个文字
+                    setTimeout(() => {
+                        setIsTyping2(true);
+                        typeText(fullText2, setDisplayText2, setCurrentIndex2, () => {
+                            setIsTyping2(false);
+                        });
+                    }, 500); // 500ms延迟
+                    
+                    // 第二个文字完成后，开始第三个文字
+                    setTimeout(() => {
+                        setIsTyping3(true);
+                        typeText(fullText3, setDisplayText3, setCurrentIndex3, () => {
+                            setIsTyping3(false);
+                        });
+                    }, 1000); // 1000ms延迟
+                    
+                    // 段落动画从0秒开始，调整速度与标题动画同时结束
+                    setIsTypingParagraph(true);
+                    // 计算段落动画速度：标题约1800ms，段落约150字符，需要约12ms/字符
+                    const paragraphSpeed = Math.floor(1800 / fullParagraph.length);
+                    typeText(fullParagraph, setDisplayParagraph, setCurrentParagraphIndex, () => {
+                        setIsTypingParagraph(false);
+                    }, paragraphSpeed);
+                    
+                    // 文字动画完成后触发抖动动画
+                    setTimeout(() => {
+                        setShakeAnimation(true);
+                        setTimeout(() => {
+                            setShakeAnimation(false);
+                        }, 1000); // 1秒后停止抖动
+                    }, 2000); // 2秒后开始抖动
+                    
+                    // 图片渐变动画，在抖动动画完成后开始
+                    setTimeout(() => {
+                        setImageAnimation(true);
+                    }, 3000); // 3秒后开始图片动画
+                }
+            },
+            { threshold: 0.3 } // 当30%的元素可见时触发
+        );
+
+        // 观察整个section元素
+        const sectionElement = document.querySelector('.agk-hero');
+        if (sectionElement) {
+            observer.observe(sectionElement);
         }
-    }, []);
+
+        return () => {
+            if (sectionElement) {
+                observer.unobserve(sectionElement);
+            }
+        };
+    }, [hasAnimated]);
 
     const typeText = (text, setDisplay, setIndex, onComplete, speed = 100) => {
         if (setIndex(0) >= text.length) {
@@ -70,6 +119,25 @@ const HeroBanner2 = () => {
                     0%, 50% { border-color: transparent; }
                     51%, 100% { border-color: #6A47ED; }
                 }
+                
+                @keyframes shake {
+                    0% { transform: rotate(0deg); }
+                    10% { transform: rotate(-5deg); }
+                    20% { transform: rotate(5deg); }
+                    30% { transform: rotate(-3deg); }
+                    40% { transform: rotate(3deg); }
+                    50% { transform: rotate(-2deg); }
+                    60% { transform: rotate(2deg); }
+                    70% { transform: rotate(-1deg); }
+                    80% { transform: rotate(1deg); }
+                    90% { transform: rotate(-0.5deg); }
+                    100% { transform: rotate(0deg); }
+                }
+                
+                @keyframes fadeIn {
+                    0% { opacity: 0; transform: scale(0.9); }
+                    100% { opacity: 1; transform: scale(1); }
+                }
             `}</style>
             <section className="agk-hero">
         <div className="hero-wrapper-two">
@@ -89,7 +157,7 @@ const HeroBanner2 = () => {
                                      animation: isTyping1 ? 'blink 0.75s step-end infinite' : 'none',
                                      width: '100%',
                                      position: 'relative',
-                                     minHeight: '2.3em'
+                                     minHeight: '1.2em'
                                  }}>
                                      <span style={{ visibility: displayText1 ? 'visible' : 'hidden' }}>
                                          {displayText1}
@@ -124,6 +192,28 @@ const HeroBanner2 = () => {
                                          width: '100%'
                                      }}>
                                          {fullText2}
+                                     </span>
+                                 </span>
+                                 <span className="text-anm" style={{ 
+                                     display: 'block',
+                                     overflow: 'hidden',
+                                     borderRight: isTyping3 ? '2px solid #6A47ED' : 'none',
+                                     animation: isTyping3 ? 'blink 0.75s step-end infinite' : 'none',
+                                     width: '100%',
+                                     position: 'relative',
+                                     minHeight: '1.2em'
+                                 }}>
+                                     <span style={{ visibility: displayText3 ? 'visible' : 'hidden' }}>
+                                         {displayText3}
+                                     </span>
+                                     <span style={{ 
+                                         position: 'absolute',
+                                         left: 0,
+                                         top: 0,
+                                         visibility: 'hidden',
+                                         width: '100%'
+                                     }}>
+                                         {fullText3}
                                      </span>
                                  </span>
                              </h1>
@@ -172,7 +262,10 @@ const HeroBanner2 = () => {
                         <ul className="service-list pf_fadeup">
                             <li>
                                 
-                                <Link href="/" className="agenko-iconic-box style-one">
+                                <Link href="/" className="agenko-iconic-box style-one" style={{
+                                    animation: shakeAnimation ? 'shake 1s ease-in-out' : 'none',
+                                    transformOrigin: 'center'
+                                }}>
                                     <div className="icon">
                                     <i className="bi bi-browser-edge"></i>
                                     </div>
@@ -183,7 +276,10 @@ const HeroBanner2 = () => {
                             </li>
                             <li>
                                 
-                                <Link href="/" className="agenko-iconic-box style-one">
+                                <Link href="/" className="agenko-iconic-box style-one" style={{
+                                    animation: shakeAnimation ? 'shake 1s ease-in-out' : 'none',
+                                    transformOrigin: 'center'
+                                }}>
                                     <div className="icon">
                                     <i className="bi bi-code-square"></i>
                                     </div>
@@ -194,7 +290,10 @@ const HeroBanner2 = () => {
                             </li>
                             <li>
                                 
-                                <Link href="/" className="agenko-iconic-box style-one">
+                                <Link href="/" className="agenko-iconic-box style-one" style={{
+                                    animation: shakeAnimation ? 'shake 1s ease-in-out' : 'none',
+                                    transformOrigin: 'center'
+                                }}>
                                     <div className="icon">
                                     <i className="bi bi-lightbulb"></i>
                                     </div>
@@ -205,7 +304,10 @@ const HeroBanner2 = () => {
                             </li>
                             <li>
                                
-                                <Link href="/" className="agenko-iconic-box style-one">
+                                <Link href="/" className="agenko-iconic-box style-one" style={{
+                                    animation: shakeAnimation ? 'shake 1s ease-in-out' : 'none',
+                                    transformOrigin: 'center'
+                                }}>
                                     <div className="icon">
                                     <i className="bi bi-megaphone"></i>
                                     </div>
@@ -218,7 +320,11 @@ const HeroBanner2 = () => {
                     </div>
                     <div className="col-lg-8">
                         
-                        <div className="hero-image style-one pf_fadeup">
+                        <div className="hero-image style-one pf_fadeup" style={{
+                            animation: imageAnimation ? 'fadeIn 1.5s ease-out' : 'none',
+                            opacity: imageAnimation ? 1 : 0,
+                            transform: imageAnimation ? 'scale(1)' : 'scale(0.9)'
+                        }}>
                             <img src="/images/880_460.png" alt="Hero Image" />
                         </div>
                     </div>

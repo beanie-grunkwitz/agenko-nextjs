@@ -1,21 +1,123 @@
+"use client"
 import Link from 'next/link';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Services2 = () => {
+    const [titleAnimation, setTitleAnimation] = useState(false);
+    const [subtitleAnimation, setSubtitleAnimation] = useState(false);
+    const [paragraphAnimation, setParagraphAnimation] = useState(false);
+    const [cardAnimations, setCardAnimations] = useState([false, false, false, false, false, false]);
+
+    useEffect(() => {
+        // 创建 IntersectionObserver 来检测元素是否进入视口
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !titleAnimation) {
+                    // 元素进入视口时开始动画序列
+                    setTimeout(() => setTitleAnimation(true), 100);
+                    setTimeout(() => setSubtitleAnimation(true), 300);
+                    setTimeout(() => setParagraphAnimation(true), 500);
+                    // 卡片动画 - 依次显示
+                    setTimeout(() => setCardAnimations([true, false, false, false, false, false]), 700);
+                    setTimeout(() => setCardAnimations([true, true, false, false, false, false]), 900);
+                    setTimeout(() => setCardAnimations([true, true, true, false, false, false]), 1100);
+                    setTimeout(() => setCardAnimations([true, true, true, true, false, false]), 1300);
+                    setTimeout(() => setCardAnimations([true, true, true, true, true, false]), 1500);
+                    setTimeout(() => setCardAnimations([true, true, true, true, true, true]), 1700);
+                }
+            },
+            { threshold: 0.3 } // 当30%的元素可见时触发
+        );
+
+        // 观察整个section元素
+        const sectionElement = document.querySelector('.agk-services');
+        if (sectionElement) {
+            observer.observe(sectionElement);
+        }
+
+        return () => {
+            if (sectionElement) {
+                observer.unobserve(sectionElement);
+            }
+        };
+    }, [titleAnimation]);
+
     return (
-                <section className="agk-services gray-dark pt-130 pb-100">
+        <>
+            <style jsx>{`
+                @keyframes fadeInUp {
+                    0% { 
+                        opacity: 0; 
+                        transform: translateY(30px); 
+                    }
+                    100% { 
+                        opacity: 1; 
+                        transform: translateY(0); 
+                    }
+                }
+                
+                @keyframes slideInLeft {
+                    0% { 
+                        opacity: 0; 
+                        transform: translateX(-50px); 
+                    }
+                    100% { 
+                        opacity: 1; 
+                        transform: translateX(0); 
+                    }
+                }
+                
+                @keyframes slideInRight {
+                    0% { 
+                        opacity: 0; 
+                        transform: translateX(50px); 
+                    }
+                    100% { 
+                        opacity: 1; 
+                        transform: translateX(0); 
+                    }
+                }
+                
+                @keyframes cardAppear {
+                    0% { 
+                        opacity: 0; 
+                        transform: translateY(40px) scale(0.95); 
+                    }
+                    100% { 
+                        opacity: 1; 
+                        transform: translateY(0) scale(1); 
+                    }
+                }
+            `}</style>
+            <section className="agk-services gray-dark pt-130 pb-100">
                         <div className="container">
                             <div className="row align-items-center">
                                 <div className="col-lg-7">
                                     
-                                    <div className="section-title mb-65 pf_fadeup">
-                                        <span className="sub-title">Our Services</span>
-                                        <h2>Korean Alpha,  
+                                    <div className="section-title mb-65 pf_fadeup" style={{
+                                        animation: titleAnimation ? 'fadeInUp 0.8s ease-out' : 'none',
+                                        opacity: titleAnimation ? 1 : 0,
+                                        transform: titleAnimation ? 'translateY(0)' : 'translateY(30px)'
+                                    }}>
+                                        <span className="sub-title" style={{
+                                            animation: subtitleAnimation ? 'slideInLeft 0.8s ease-out' : 'none',
+                                            opacity: subtitleAnimation ? 1 : 0,
+                                            transform: subtitleAnimation ? 'translateX(0)' : 'translateX(-50px)'
+                                        }}>Our Services</span>
+                                        <h2 style={{
+                                            animation: titleAnimation ? 'slideInRight 0.8s ease-out' : 'none',
+                                            opacity: titleAnimation ? 1 : 0,
+                                            transform: titleAnimation ? 'translateX(0)' : 'translateX(50px)'
+                                        }}>Korean Alpha,  
                                             Global Beta</h2>
                                     </div>
                                 </div>
                                 <div className="col-lg-5">
-                                    <div className="text-box mb-60 pf_fadeup">
+                                    <div className="text-box mb-60 pf_fadeup" style={{
+                                        animation: paragraphAnimation ? 'fadeInUp 0.8s ease-out' : 'none',
+                                        opacity: paragraphAnimation ? 1 : 0,
+                                        transform: paragraphAnimation ? 'translateY(0)' : 'translateY(30px)'
+                                    }}>
                                         <p>We are a research-driven consultancy that transforms global blockchain projects into Korean market success stories through our comprehensive suite of localization, marketing, and strategic services.</p>
                                     </div>
                                 </div>
@@ -23,7 +125,15 @@ const Services2 = () => {
                             <div className="row">
                                 <div className="col-lg-12">
                                     
-                                                                         <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ display: 'flex', alignItems: 'flex-start', gap: '30px', width: '100%' }}>
+                                                                         <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ 
+                                                                             display: 'flex', 
+                                                                             alignItems: 'flex-start', 
+                                                                             gap: '30px', 
+                                                                             width: '100%',
+                                                                             animation: cardAnimations[0] ? 'cardAppear 0.8s ease-out' : 'none',
+                                                                             opacity: cardAnimations[0] ? 1 : 0,
+                                                                             transform: cardAnimations[0] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.95)'
+                                                                         }}>
                                          <div className="card-title" style={{ flex: '0 0 50%', maxWidth: '30%' }}>
                                              <div className="sn-number">01</div>
                                              <h3 className="title">Deep Research Report & Premium Localization</h3>
@@ -35,7 +145,15 @@ const Services2 = () => {
                                 </div>
                                 <div className="col-lg-12">
                                    
-                                                                         <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ display: 'flex', alignItems: 'flex-start', gap: '30px', width: '100%' }}>
+                                                                         <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ 
+                                                                             display: 'flex', 
+                                                                             alignItems: 'flex-start', 
+                                                                             gap: '30px', 
+                                                                             width: '100%',
+                                                                             animation: cardAnimations[1] ? 'cardAppear 0.8s ease-out' : 'none',
+                                                                             opacity: cardAnimations[1] ? 1 : 0,
+                                                                             transform: cardAnimations[1] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.95)'
+                                                                         }}>
                                          <div className="card-title" style={{ flex: '0 0 50%', maxWidth: '30%' }}>
                                              <div className="sn-number">02</div>
                                              <h3 className="title">Top KOLs and Community Resources</h3>
@@ -46,7 +164,15 @@ const Services2 = () => {
                                      </div>
                                 </div>
                                 <div className="col-lg-12">
-                                                                         <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ display: 'flex', alignItems: 'flex-start', gap: '30px', width: '100%' }}>
+                                                                         <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ 
+                                                                             display: 'flex', 
+                                                                             alignItems: 'flex-start', 
+                                                                             gap: '30px', 
+                                                                             width: '100%',
+                                                                             animation: cardAnimations[2] ? 'cardAppear 0.8s ease-out' : 'none',
+                                                                             opacity: cardAnimations[2] ? 1 : 0,
+                                                                             transform: cardAnimations[2] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.95)'
+                                                                         }}>
                                          <div className="card-title" style={{ flex: '0 0 50%', maxWidth: '30%' }}>
                                              <div className="sn-number">03</div>
                                              <h3 className="title">Viral Marketing & Media Relations Excellence</h3>
@@ -57,7 +183,15 @@ const Services2 = () => {
                                      </div>
                                 </div>
                                 <div className="col-lg-12">
-                                                                                                                                                   <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ display: 'flex', alignItems: 'flex-start', gap: '30px', width: '100%' }}>
+                                                                                                                                                   <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ 
+                                                                                       display: 'flex', 
+                                                                                       alignItems: 'flex-start', 
+                                                                                       gap: '30px', 
+                                                                                       width: '100%',
+                                                                                       animation: cardAnimations[3] ? 'cardAppear 0.8s ease-out' : 'none',
+                                                                                       opacity: cardAnimations[3] ? 1 : 0,
+                                                                                       transform: cardAnimations[3] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.95)'
+                                                                                   }}>
                                           <div className="card-title" style={{ flex: '0 0 50%', maxWidth: '30%' }}>
                                               <div className="sn-number">04</div>
                                               <h3 className="title">Full-Cycle TGE Campaign Management</h3>
@@ -67,31 +201,48 @@ const Services2 = () => {
                                           </div>
                                       </div>
                                 </div>
-                                <div className="col-lg-12">
-                                                                                                                                                   <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ display: 'flex', alignItems: 'flex-start', gap: '30px', width: '100%' }}>
-                                          <div className="card-title" style={{ flex: '0 0 50%', maxWidth: '30%' }}>
-                                              <div className="sn-number">05</div>
-                                              <h3 className="title">Premium Event Production & Sports Marketing</h3>
-                                          </div>
-                                          <div style={{ flex: '1', minWidth: '0', maxWidth: '70%'}}>
-                                              <p>Leverage our proven experience with major cultural events like World DJ Festival to create impactful Web3 experiences. We execute high-profile meetups, airdrops, and NFT showcases that convert Web2 audiences into Web3 participants. Develop strategic partnerships with K-League football and Korean sports leagues, enhancing brand visibility through stadium sponsorships and live event activations.</p>
-                                          </div>
-                                      </div>
+                                                                <div className="col-lg-12">
+                                                                                                                                                    <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ 
+                                                                                        display: 'flex', 
+                                                                                        alignItems: 'flex-start', 
+                                                                                        gap: '30px', 
+                                                                                        width: '100%',
+                                                                                        animation: cardAnimations[4] ? 'cardAppear 0.8s ease-out' : 'none',
+                                                                                        opacity: cardAnimations[4] ? 1 : 0,
+                                                                                        transform: cardAnimations[4] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.95)'
+                                                                                    }}>
+                                           <div className="card-title" style={{ flex: '0 0 50%', maxWidth: '30%' }}>
+                                               <div className="sn-number">05</div>
+                                               <h3 className="title">Premium Event Production & Sports Marketing</h3>
+                                           </div>
+                                           <div style={{ flex: '1', minWidth: '0', maxWidth: '70%'}}>
+                                               <p>Leverage our proven experience with major cultural events like World DJ Festival to create impactful Web3 experiences. We execute high-profile meetups, airdrops, and NFT showcases that convert Web2 audiences into Web3 participants. Develop strategic partnerships with K-League football and Korean sports leagues, enhancing brand visibility through stadium sponsorships and live event activations.</p>
+                                           </div>
+                                       </div>
                                 </div>
-                                <div className="col-lg-12">
-                                                                                                                                                   <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ display: 'flex', alignItems: 'flex-start', gap: '30px', width: '100%' }}>
-                                          <div className="card-title" style={{ flex: '0 0 50%', maxWidth: '30%' }}>
-                                              <div className="sn-number">06</div>
-                                              <h3 className="title">Strategic Outdoor Media & Digital Advertising</h3>
-                                          </div>
-                                          <div style={{ flex: '1', minWidth: '0', maxWidth: '70%'}}>
-                                              <p>Deploy impactful visual campaigns across Seoul&apos;s prime digital real estate including department stores, landmark buildings, and subway networks. Our media strategy maximizes brand exposure among Korea&apos;s most affluent and tech-savvy demographics, establishing strong visual brand presence through strategic outdoor media placement.</p>
-                                          </div>
-                                      </div>
+                                                                <div className="col-lg-12">
+                                                                                                                                                    <div className="agenko-card-item style-one mb-30 pf_fadeup" style={{ 
+                                                                                        display: 'flex', 
+                                                                                        alignItems: 'flex-start', 
+                                                                                        gap: '30px', 
+                                                                                        width: '100%',
+                                                                                        animation: cardAnimations[5] ? 'cardAppear 0.8s ease-out' : 'none',
+                                                                                        opacity: cardAnimations[5] ? 1 : 0,
+                                                                                        transform: cardAnimations[5] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.95)'
+                                                                                    }}>
+                                           <div className="card-title" style={{ flex: '0 0 50%', maxWidth: '30%' }}>
+                                               <div className="sn-number">06</div>
+                                               <h3 className="title">Strategic Outdoor Media & Digital Advertising</h3>
+                                           </div>
+                                           <div style={{ flex: '1', minWidth: '0', maxWidth: '70%'}}>
+                                               <p>Deploy impactful visual campaigns across Seoul&apos;s prime digital real estate including department stores, landmark buildings, and subway networks. Our media strategy maximizes brand exposure among Korea&apos;s most affluent and tech-savvy demographics, establishing strong visual brand presence through strategic outdoor media placement.</p>
+                                           </div>
+                                       </div>
                                 </div>
                             </div>
                         </div>
                     </section>
+        </>
     );
 };
 
