@@ -317,7 +317,9 @@ const HeroBanner2 = () => {
                                          left: 0,
                                          top: 0,
                                          visibility: 'hidden',
-                                         width: '100%'
+                                         width: '100%',
+                                         color:'#505050'
+
                                      }}>
                                          {fullParagraph}
                                      </span>

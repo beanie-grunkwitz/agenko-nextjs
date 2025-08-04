@@ -31,7 +31,7 @@ const Footer = () => {
                                             {/* <div className="footer-logo"> */}
                                                 <a href="#"> <Image src="/images/light-logo.png" alt="img" width={151} height={40} style={{marginBottom:5, objectFit:'contain'}}   /></a>
                                             {/* </div> */}
-                                                                                         <p>K1 Research is Seoul&apos;s premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea&apos;s dynamic blockchain ecosystem. Powered by Klein Labs.</p>
+                                                                                         <p style={{ color: '#808080' }}>K1 Research is Seoul&apos;s premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea&apos;s dynamic blockchain ecosystem. Powered by Klein Labs.</p>
                                                                                          <form onSubmit={handleSubscribe}>
                                                  <div className="form-group">
                                                      <input type="email" className="form_control" placeholder="Email Address" name="email" required />
