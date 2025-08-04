@@ -7472,3 +7472,8 @@ h1, h2, h3, h4, h5, h6 {
     80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
     100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
 }
+
+/* Count class styling */
+.count {
+    color: #6A47ED !important;
+}

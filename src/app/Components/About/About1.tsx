@@ -28,7 +28,7 @@ const About1 = () => {
                             
                             <div className="agenko-counter-box style-one">
                                 <div className="content">
-                                    <h2 className="mb-10"><span className="count">100</span>+</h2>
+                                    <h2 className="mb-10"><span className="count">100+</span></h2>
                                     <p>Deep web3 research report</p>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@ const About1 = () => {
                             
                             <div className="agenko-counter-box style-one">
                                 <div className="content">
-                                    <h2 className="mb-10"><span className="count">50</span>+</h2>
+                                    <h2 className="mb-10"><span className="count">50+</span></h2>
                                     <p>In-depth cooperative customers</p>
                                 </div>
                             </div>
