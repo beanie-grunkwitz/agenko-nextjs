@@ -1,37 +1,49 @@
 import Link from 'next/link';
 
 export default function Nav({ setMobileToggle }) {
+  const handleNavClick = (sectionId) => {
+    if (typeof window !== 'undefined') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    if (setMobileToggle) {
+      setMobileToggle(false);
+    }
+  };
+
   return (
     <ul className="cs_nav_list fw-medium">
       <li>
-        <Link href="/" onClick={() => setMobileToggle(false)}>
+        <a href="#home" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}>
           Home
-        </Link>
+        </a>
       </li>
       <li>
-        <Link href="/about" onClick={() => setMobileToggle(false)}>
+        <a href="#about" onClick={(e) => { e.preventDefault(); handleNavClick('about'); }}>
           About
-        </Link>
+        </a>
       </li>
       <li>
-        <Link href="/service" onClick={() => setMobileToggle(false)}>
+        <a href="#service" onClick={(e) => { e.preventDefault(); handleNavClick('service'); }}>
           Service
-        </Link>
+        </a>
       </li>
       <li>
-        <Link href="/client" onClick={() => setMobileToggle(false)}>
+        <a href="#client" onClick={(e) => { e.preventDefault(); handleNavClick('client'); }}>
           Client
-        </Link>
+        </a>
       </li>
       <li>
-        <Link href="/team" onClick={() => setMobileToggle(false)}>
+        <a href="#team" onClick={(e) => { e.preventDefault(); handleNavClick('team'); }}>
           Team
-        </Link>
+        </a>
       </li>
       <li>
-        <Link href="/contact" onClick={() => setMobileToggle(false)}>
+        <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }}>
           Contact
-        </Link>
+        </a>
       </li>
     </ul>
   );

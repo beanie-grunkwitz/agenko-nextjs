@@ -51,22 +51,34 @@ const Footer = () => {
                                                     <h4 className="widget-title">Our Link</h4>
                                                     <ul className="footer-nav">
                                                         <li>
-                                                            <Link href="/about">Home</Link>
+                                                            <a href="#home" onClick={(e) => { e.preventDefault(); document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                                                                Home
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <Link href="/service">About</Link>
+                                                            <a href="#about" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                                                                About
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <Link href="/project">Service</Link>
+                                                            <a href="#service" onClick={(e) => { e.preventDefault(); document.getElementById('service')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                                                                Service
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <Link href="/faq">Client</Link>
+                                                            <a href="#client" onClick={(e) => { e.preventDefault(); document.getElementById('client')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                                                                Client
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <Link href="/contact">Team</Link>
+                                                            <a href="#team" onClick={(e) => { e.preventDefault(); document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                                                                Team
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <Link href="/contact">Contact</Link>
+                                                            <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                                                                Contact
+                                                            </a>
                                                         </li>
                                                     </ul>
                                                 </div>

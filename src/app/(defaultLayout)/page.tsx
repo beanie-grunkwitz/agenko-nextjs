@@ -14,15 +14,27 @@ import Blog2 from '../Components/Blog/Blog2';
 const page = () => {
     return (
         <div>
-            <HeroBanner2></HeroBanner2>
-            <About1></About1>
-            <Services2></Services2>
-            <Blog2></Blog2>   
-            <WhoWeAre></WhoWeAre>
+            <div id="home">
+                <HeroBanner2></HeroBanner2>
+            </div>
+            <div id="about">
+                <About1></About1>
+            </div>
+            <div id="service">
+                <Services2></Services2>
+            </div>
+            <div id="client">
+                <Blog2></Blog2>   
+            </div>
+            <div id="team">
+                <Team2></Team2>
+            </div>
+            <div id="contact">
+                <WhoWeAre></WhoWeAre>
+            </div>
             <Process2></Process2>
             <Testimonial2></Testimonial2>
             <Faq1></Faq1>
-            <Team2></Team2>
             <Brand2></Brand2>  
         </div>
     );

@@ -7477,3 +7477,13 @@ h1, h2, h3, h4, h5, h6 {
 .count {
     color: #6A47ED !important;
 }
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section IDs for navigation */
+#home, #about, #service, #client, #team, #contact {
+    scroll-margin-top: 100px;
+}
