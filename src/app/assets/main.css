@@ -7302,3 +7302,150 @@ label {
 .smaller-text {
   font-size: 0.85em;
 }
+
+.nft-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(106, 71, 237, 0.2);
+  transition: all 0.3s ease;
+}
+
+.nft-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(106, 71, 237, 0.3);
+}
+
+.nft-image {
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.nft-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.nft-image.rounded-full {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #6A47ED;
+  box-shadow: 0 4px 16px rgba(106, 71, 237, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nft-image.rounded-full:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(106, 71, 237, 0.4);
+}
+
+.agenko-team-item.style-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.nft-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px auto;
+}
+
+.nft-image.rounded-full {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #6A47ED;
+  box-shadow: 0 6px 20px rgba(106, 71, 237, 0.3);
+}
+
+.member-info {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.nft-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px auto;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.nft-image.rounded-full {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #6A47ED;
+  box-shadow: 0 6px 20px rgba(106, 71, 237, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.nft-image.rounded-full:hover {
+  transform: scale(1.2);
+}
+
+/* Font fallback styles */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* System font fallbacks */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+}
+
+.title-subtitle {
+  color: var(--primary-color);
+  font-size: 0.9em;
+  font-weight: 500;
+  margin: 5px 0 10px 0;
+  opacity: 0.8;
+}
+
+.smaller-content {
+  font-size: 0.85em;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-top: 10px;
+}
+
+.post-image {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.agenko-blog-item {
+  transition: none;
+}
+
+.agenko-blog-item:hover {
+  transform: none;
+}

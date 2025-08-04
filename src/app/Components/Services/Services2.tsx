@@ -52,7 +52,7 @@ const Services2 = () => {
                                             <h3 className="title">Viral Marketing & Media Relations Excellence</h3>
                                         </div>
                                         <div className="content">
-                                            <p>Amplify project exposure through targeted campaigns on Korea's premier online communities including Coinpan, Cobak, Blind, DC Inside, and Theqoo. We create compelling viral content and implement hashtag strategies that generate sustained discussion and organic growth. Seamlessly integrate with Korea's top blockchain and technology media outlets including TokenPost, Naver, Blockmedia, and Coinness. We provide comprehensive press release creation, distribution, and interview coordination, establishing authoritative thought leadership through strategic research publication timing.</p>
+                                            <p>Amplify project exposure through targeted campaigns on Korea&apos;s premier online communities including Coinpan, Cobak, Blind, DC Inside, and Theqoo. We create compelling viral content and implement hashtag strategies that generate sustained discussion and organic growth. Seamlessly integrate with Korea&apos;s top blockchain and technology media outlets including TokenPost, Naver, Blockmedia, and Coinness. We provide comprehensive press release creation, distribution, and interview coordination, establishing authoritative thought leadership through strategic research publication timing.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@ const Services2 = () => {
                                             <h3 className="title">Strategic Outdoor Media & Digital Advertising</h3>
                                         </div>
                                         <div className="content">
-                                            <p>Deploy impactful visual campaigns across Seoul's prime digital real estate including department stores, landmark buildings, and subway networks. Our media strategy maximizes brand exposure among Korea's most affluent and tech-savvy demographics, establishing strong visual brand presence through strategic outdoor media placement.</p>
+                                            <p>Deploy impactful visual campaigns across Seoul&apos;s prime digital real estate including department stores, landmark buildings, and subway networks. Our media strategy maximizes brand exposure among Korea&apos;s most affluent and tech-savvy demographics, establishing strong visual brand presence through strategic outdoor media placement.</p>
                                         </div>
                                     </div>
                                 </div>

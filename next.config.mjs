@@ -4,7 +4,7 @@ const nextConfig = {
     optimizePackageImports: ['bootstrap', 'bootstrap-icons'],
   },
   images: {
-    domains: ['fonts.gstatic.com'],
+    domains: ['fonts.gstatic.com', 'images.unsplash.com', 'i.seadn.io'],
   },
   async headers() {
     return [

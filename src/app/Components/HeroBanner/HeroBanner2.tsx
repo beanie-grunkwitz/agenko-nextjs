@@ -19,7 +19,7 @@ const HeroBanner2 = () => {
                                 <span className="text-anm">Korean</span>
                             </h1>
                             <div className="text-box pf_fadeup">
-                                <p><span>K1 Research</span> is Seoul's premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea's dynamic blockchain ecosystem. Powered by Klein Labs.</p>
+                                <p><span>K1 Research</span> is Seoul&apos;s premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea&apos;s dynamic blockchain ecosystem. Powered by Klein Labs.</p>
                                 <div className="hero-button">
                                     <Link href="https://x.com/K1_Research" className="theme-btn style-one">
                                         <span className="text-flip">

@@ -17,6 +17,7 @@ const page = () => {
             <HeroBanner2></HeroBanner2>
             <About1></About1>
             <Services2></Services2>
+            <Blog2></Blog2>   
             <Project2></Project2>
             <WhoWeAre></WhoWeAre>
             <Process2></Process2>
@@ -24,7 +25,6 @@ const page = () => {
             <Faq1></Faq1>
             <Team2></Team2>
             <Brand2></Brand2>  
-            <Blog2></Blog2>          
         </div>
     );
 };
