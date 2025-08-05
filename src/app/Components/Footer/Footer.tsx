@@ -66,7 +66,7 @@ const Footer = () => {
                                                 </li>
                                                 <li>
                                                     <a href="#team" onClick={(e) => { e.preventDefault(); document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                                                        Team
+                                                        Client
                                                     </a>
                                                 </li>
                                                 <li>

@@ -37,7 +37,7 @@ export default function Nav({ setMobileToggle }) {
       </li>
       <li>
         <a href="#team" onClick={(e) => { e.preventDefault(); handleNavClick('team'); }}>
-          Team
+          Client
         </a>
       </li>
       <li>
