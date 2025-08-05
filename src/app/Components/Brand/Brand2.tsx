@@ -259,7 +259,7 @@ const Brand2 = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="row mb-40">
+                    <div className="row mb-40" style={{marginTop: '-50px'}}>
                         <div className="col-lg-12 text-center">
                             <h2 style={{ 
                                 fontSize: '28px', 
