@@ -259,6 +259,16 @@ const Brand2 = () => {
                             </div>
                         ))}
                     </div>
+                    <div className="row mb-40">
+                        <div className="col-lg-12 text-center">
+                            <h2 style={{ 
+                                fontSize: '28px', 
+                                margin: '0', 
+                                padding: '20px 0 0 0',
+                                color: 'inherit'
+                            }}>. . .</h2>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>

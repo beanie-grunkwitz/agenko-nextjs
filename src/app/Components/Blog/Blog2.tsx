@@ -127,8 +127,8 @@ const Blog2 = () => {
                         }}>
                             <a href="https://mirror.xyz/kleinlabs.eth" className="theme-btn style-one">
                                 <span className="text-flip">
-                                    <span className="text">View All Blogs</span>
-                                    <span className="text">View All Blogs</span>
+                                    <span className="text">View All Reports</span>
+                                    <span className="text">View All Reports</span>
                                 </span>
                             </a>
                         </div>    
@@ -137,7 +137,7 @@ const Blog2 = () => {
                 <div className="row">
                 {blogContent.map((item, i) => (
                     <div key={i} className="col-lg-12">
-                        <div className="agenko-blog-item style-one mb-40 pf_fadeup" style={{ 
+                        <div className="agenko-blog-item style-one pf_fadeup" style={{ 
                             padding: '5px',
                             animation: blogAnimations[i] ? 'blogCardAppear 0.8s ease-out' : 'none',
                             opacity: blogAnimations[i] ? 1 : 0,
@@ -168,7 +168,16 @@ const Blog2 = () => {
                     </div>
                     ))}
 
-
+                    <div className="row mb-40">
+                        <div className="col-lg-12 text-center">
+                            <h2 style={{ 
+                                fontSize: '28px', 
+                                margin: '0', 
+                                padding: '20px 0 0 0',
+                                color: 'inherit'
+                            }}>. . .</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
