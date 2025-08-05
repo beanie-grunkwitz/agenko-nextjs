@@ -110,12 +110,12 @@ const Blog2 = () => {
                                 animation: titleAnimation ? 'slideInLeft 0.8s ease-out' : 'none',
                                 opacity: titleAnimation ? 1 : 0,
                                 transform: titleAnimation ? 'translateX(0)' : 'translateX(-50px)'
-                            }}>Latest Blog</span>
+                            }}>Latest Report</span>
                             <h2 style={{
                                 animation: titleAnimation ? 'slideInRight 0.8s ease-out' : 'none',
                                 opacity: titleAnimation ? 1 : 0,
                                 transform: titleAnimation ? 'translateX(0)' : 'translateX(50px)'
-                            }}>Our Blogs</h2>
+                            }}>Our Report</h2>
                         </div>
                     </div>
                     <div className="col-lg-6">
