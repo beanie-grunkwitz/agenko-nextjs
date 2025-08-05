@@ -39,7 +39,7 @@ const Footer = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6" style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'space-between', gap: '20px' }}>
+                                <div className="col-lg-6 col-md-6 col-sm-6" style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'space-between', gap: '20px', flexDirection: 'row' }}>
                                     <div className="footer-widget footer-nav-widget mb-40 pf_fadeup" style={{ flex: '1', paddingLeft: '60px' }}>
                                         <div className="footer-content mb-35">
                                             <h4 className="widget-title">Our Link</h4>

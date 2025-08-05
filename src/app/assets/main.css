@@ -4661,6 +4661,25 @@ label {
     padding-left: 0;
   }
 }
+
+/* Mobile responsive styles for footer */
+@media screen and (max-width: 767px) {
+  .agenko-footer .col-lg-6.col-md-6.col-sm-6 {
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+  
+  .agenko-footer .footer-widget.footer-nav-widget {
+    padding-left: 0 !important;
+    flex: none !important;
+    width: 100% !important;
+  }
+  
+  .agenko-footer .footer-widget.footer-contact-widget {
+    flex: none !important;
+    width: 100% !important;
+  }
+}
 .footer-widget.footer-contact-widget .footer-content h4.widget-title {
   margin-bottom: 20px;
 }
