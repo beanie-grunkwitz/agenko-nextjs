@@ -42,7 +42,7 @@ export default function Header1({ variant }: any) {
           <div className="cs_main_header_in">
             <div className="cs_main_header_left">
             <Link className="cs_site_branding" href="/">
-            <Image src="/images/light-logo.png" alt="V1 RESEARCH Logo" width={151} height={40} />
+            <img style={{objectFit:'contain'}} src="/images/light-logo.png" alt="V1 RESEARCH Logo" width={151} height={40} />
               </Link>
               </div>
               <div className="cs_main_header_center">
