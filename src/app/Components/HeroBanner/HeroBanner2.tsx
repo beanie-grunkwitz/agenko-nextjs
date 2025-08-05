@@ -210,11 +210,20 @@ const HeroBanner2 = () => {
                         gap: 15px !important;
                     }
                     
-                    .service-list li {
-                        width: 100% !important;
-                    }
-                }
-                }
+                                         .service-list li {
+                         width: 100% !important;
+                     }
+                     
+                     /* 手机端文字宽度调整 */
+                     .hero-content .text-box p {
+                         width: 100% !important;
+                         transform: none !important;
+                         left: 0 !important;
+                     }
+                     
+                     
+                 }
+                 }
             `}</style>
             <section className="agk-hero">
         <div className="hero-wrapper-two">
@@ -225,8 +234,8 @@ const HeroBanner2 = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
-                        <div className="hero-content" style={{width:'100%', display:'flex', justifyContent:'space-between'}}>
-                                                         <h1 style={{ width: '100%' }}>
+                                                 <div className="hero-content">
+                                                         <h1>
                                  <span className="text-anm" style={{ 
                                      display: 'block',
                                      overflow: 'hidden',
@@ -295,16 +304,7 @@ const HeroBanner2 = () => {
                                  </span>
                              </h1>
                                                          <div className="text-box pf_fadeup">
-                                 <p style={{ 
-                                     width: '100%', 
-                                     margin: '0 auto', 
-                                     padding: '0', 
-                                     wordWrap: 'break-word', 
-                                     overflowWrap: 'break-word',
-                                     position: 'relative',
-                                     minHeight: '4em',
-                                     textAlign: 'left'
-                                 }}>
+                                 <p>
                                      <span style={{ 
                                          visibility: displayParagraph ? 'visible' : 'hidden',
                                          borderRight: isTypingParagraph ? '2px solid #6A47ED' : 'none',
@@ -312,15 +312,15 @@ const HeroBanner2 = () => {
                                      }}>
                                          {displayParagraph}
                                      </span>
-                                     <span style={{ 
-                                         position: 'absolute',
-                                         left: 0,
-                                         top: 0,
-                                         visibility: 'hidden',
-                                         width: '100%',
-                                         color:'#505050'
+                                                                           <span style={{ 
+                                          position: 'absolute',
+                                          left: 0,
+                                          top: 0,
+                                          visibility: 'hidden',
+                                          width: '100%',
+                                          color:'#505050'
 
-                                     }}>
+                                      }}>
                                          {fullParagraph}
                                      </span>
                                  </p>

@@ -182,9 +182,9 @@ const About1 = () => {
                         <Image src="/images/440_532.png" alt="img" width={440} height={532}   />
                         </div>
                         <div className="agenko-experince-box style-one">
-                            <p style={{ fontSize: '1.5rem', textAlign:'left', fontWeight: '600' }}>K1</p>
-                            <p style={{ fontSize: '1.5rem', textAlign:'left', fontWeight: '600' }}>Korea</p>
-                            <p style={{ fontSize: '1.5rem', textAlign:'left', fontWeight: '600' }}>Keystone</p>
+                            <p style={{ fontSize: '1.5rem', textAlign:'left', fontWeight: '600' }}>K1.</p>
+                            <p style={{ fontSize: '1.5rem', textAlign:'left', fontWeight: '600' }}>Korea.</p>
+                            <p style={{ fontSize: '1.5rem', textAlign:'left', fontWeight: '600' }}>Keystone.</p>
                         </div>
                     </div>
                 </div>
