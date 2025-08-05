@@ -137,7 +137,7 @@ const Blog2 = () => {
                 <div className="row">
                 {blogContent.map((item, i) => (
                     <div key={i} className="col-lg-12">
-                        <div className="agenko-blog-item style-one pf_fadeup" style={{ 
+                        <div className="agenko-blog-item style-one mb-40 pf_fadeup" style={{ 
                             padding: '5px',
                             animation: blogAnimations[i] ? 'blogCardAppear 0.8s ease-out' : 'none',
                             opacity: blogAnimations[i] ? 1 : 0,
