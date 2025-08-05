@@ -23,7 +23,7 @@ const HeroBanner2 = () => {
     const fullText1 = "Think Global.";
     const fullText2 = "Execute";
     const fullText3 = "Korean.";
-    const fullParagraph = "K1 Research is Seoul's premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea's dynamic blockchain ecosystem. Powered by Klein Labs.";
+    const fullParagraph = "K1 Research is Seoul's premier Web3 market intelligence and localization institution, providing comprehensive solutions for global projects entering Korea's dynamic blockchain ecosystem. Powered by Klein Labs.";
 
     useEffect(() => {
         // 创建 IntersectionObserver 来检测元素是否进入视口
