@@ -20,9 +20,9 @@ const HeroBanner2 = () => {
     const [imageAnimation, setImageAnimation] = useState(false);
     const [hasAnimated, setHasAnimated] = useState(false);
 
-    const fullText1 = "Think Global";
+    const fullText1 = "Think Global.";
     const fullText2 = "Execute";
-    const fullText3 = "Korean";
+    const fullText3 = "Korean.";
     const fullParagraph = "K1 Research is Seoul's premier Web3 market intelligence and localization partner, providing comprehensive solutions for global projects entering Korea's dynamic blockchain ecosystem. Powered by Klein Labs.";
 
     useEffect(() => {
