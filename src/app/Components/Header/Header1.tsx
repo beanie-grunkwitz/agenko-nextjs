@@ -45,7 +45,7 @@ export default function Header1({ variant }: any) {
             <img style={{objectFit:'contain'}} src="/images/light-logo.png" alt="V1 RESEARCH Logo" width={151} height={40} />
               </Link>
               </div>
-              <div className="cs_main_header_center">
+              {/* <div className="cs_main_header_center">
                 <div className="cs_nav cs_primary_font fw-medium">
                   <span
                     className={
@@ -59,7 +59,7 @@ export default function Header1({ variant }: any) {
                   </span>
                   <Nav setMobileToggle={setMobileToggle} />
                 </div>
-            </div>
+            </div> */}
             <div className="cs_main_header_right">
               <div className="header-btn d-flex align-items-center">
 
