@@ -7022,13 +7022,22 @@ label {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    visibility: visible;
-    opacity: 1;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .cs_nav .cs_nav_list a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
+  }
+  
+  /* 确保菜单项在iPhone上正确显示 */
+  .cs_site_header.cs_mobile_toggle_active .cs_nav .cs_nav_list a,
+  .cs_nav .cs-munu_toggle.cs_teggle_active + .cs_nav_list a {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #fff !important;
   }
   .cs_nav .menu-item-has-children {
     position: relative;
@@ -7162,6 +7171,29 @@ label {
  }
 }
 .cs_nav .cs_nav_list span.cs-munu_dropdown_toggle.active + ul, .cs_nav .cs-munu_toggle.cs_teggle_active + .cs_nav_list {
+  display: block !important;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background-color: #181818;
+  z-index: 9999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
+  height: auto;
+  min-height: 200px;
+  padding: 20px 0;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* 添加更具体的选择器来确保菜单在iPhone上正确显示 */
+.cs_site_header.cs_mobile_toggle_active .cs_nav .cs_nav_list,
+.cs_nav .cs-munu_toggle.cs_teggle_active + .cs_nav_list {
   display: block !important;
   position: fixed;
   top: 80px;
