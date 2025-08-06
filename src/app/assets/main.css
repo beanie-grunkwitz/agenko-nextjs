@@ -6993,6 +6993,9 @@ label {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transform: translateZ(0);
     min-height: 200px;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
  }
   .cs_nav .cs_nav_list ul {
     padding-left: 15px;
@@ -7000,6 +7003,9 @@ label {
     text-transform: capitalize;
     list-style: none;
     margin: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 15px;
  }
   .cs_nav .cs_nav_list a {
     display: block;
@@ -7009,6 +7015,15 @@ label {
     font-size: 16px;
     line-height: 1.4;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    visibility: visible;
+    opacity: 1;
   }
   
   .cs_nav .cs_nav_list a:hover {
@@ -7160,6 +7175,11 @@ label {
   height: auto;
   min-height: 200px;
   padding: 20px 0;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 .cs_site_header.cs_color_1 .cs_header_search_btn {
   color: initial;
