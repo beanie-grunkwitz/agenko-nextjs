@@ -6989,7 +6989,7 @@ label {
     overflow: visible;
     max-height: none;
     line-height: 1.6em;
-    z-index: 1000;
+    z-index: 9999;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transform: translateZ(0);
  }
@@ -7140,7 +7140,7 @@ label {
   left: 0;
   width: 100%;
   background-color: #181818;
-  z-index: 1000;
+  z-index: 9999;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   max-height: calc(100vh - 80px);
