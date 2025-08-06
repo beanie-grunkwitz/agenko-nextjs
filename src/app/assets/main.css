@@ -6998,15 +6998,23 @@ label {
     padding-left: 15px;
     display: none;
     text-transform: capitalize;
+    list-style: none;
+    margin: 0;
  }
   .cs_nav .cs_nav_list a {
     display: block;
-    padding: 8px 20px;
+    padding: 12px 20px;
     color: #fff;
     text-decoration: none;
     font-size: 16px;
     line-height: 1.4;
- }
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .cs_nav .cs_nav_list a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
   .cs_nav .menu-item-has-children {
     position: relative;
  }
@@ -7139,7 +7147,7 @@ label {
  }
 }
 .cs_nav .cs_nav_list span.cs-munu_dropdown_toggle.active + ul, .cs_nav .cs-munu_toggle.cs_teggle_active + .cs_nav_list {
-  display: block;
+  display: block !important;
   position: fixed;
   top: 80px;
   left: 0;
@@ -7150,6 +7158,8 @@ label {
   overflow-y: auto;
   max-height: calc(100vh - 80px);
   height: auto;
+  min-height: 200px;
+  padding: 20px 0;
 }
 .cs_site_header.cs_color_1 .cs_header_search_btn {
   color: initial;
