@@ -6996,7 +6996,14 @@ label {
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
- }
+  }
+  
+  /* 强制显示菜单 - 针对iPhone的特殊处理 */
+  .cs_site_header.cs_mobile_toggle_active .cs_nav .cs_nav_list {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
   .cs_nav .cs_nav_list ul {
     padding-left: 15px;
     display: none;
@@ -7193,7 +7200,8 @@ label {
 
 /* 添加更具体的选择器来确保菜单在iPhone上正确显示 */
 .cs_site_header.cs_mobile_toggle_active .cs_nav .cs_nav_list,
-.cs_nav .cs-munu_toggle.cs_teggle_active + .cs_nav_list {
+.cs_nav .cs-munu_toggle.cs_teggle_active + .cs_nav_list,
+.cs_site_header.cs_mobile_toggle_active .cs_nav .cs_nav_list {
   display: block !important;
   position: fixed;
   top: 80px;
@@ -7212,6 +7220,32 @@ label {
   -webkit-backface-visibility: hidden;
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+/* 强制显示菜单内容 - 针对iPhone的特殊处理 */
+.cs_site_header.cs_mobile_toggle_active .cs_nav .cs_nav_list,
+.cs_nav .cs-munu_toggle.cs_teggle_active + .cs_nav_list {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+/* 确保菜单项在iPhone上正确显示 */
+.cs_site_header.cs_mobile_toggle_active .cs_nav .cs_nav_list li,
+.cs_nav .cs-munu_toggle.cs_teggle_active + .cs_nav_list li {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.cs_site_header.cs_mobile_toggle_active .cs_nav .cs_nav_list a,
+.cs_nav .cs-munu_toggle.cs_teggle_active + .cs_nav_list a {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #fff !important;
 }
 .cs_site_header.cs_color_1 .cs_header_search_btn {
   color: initial;
