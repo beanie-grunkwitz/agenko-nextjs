@@ -23,9 +23,19 @@ export default function RootLayout({ children } : any ) {
   return (
     <html lang="en">
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYEPFFHBMP"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-VYEPFFHBMP');
+            `
+          }}
+        />
         <meta name="author" content="Themeservices" />
       </head>
-
     <body>
         {children}
       </body>
