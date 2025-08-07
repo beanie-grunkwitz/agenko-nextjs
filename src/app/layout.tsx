@@ -25,7 +25,16 @@ export default function RootLayout({ children } : any ) {
       <head>
         <meta name="author" content="Themeservices" />
       </head>
-      <body>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYEPFFHBMP"></script>
+    {/* @ts-ignore */}
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      {/* @ts-ignore */}
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+      gtag('config', 'G-VYEPFFHBMP');
+    </script>
+    <body>
         {children}
       </body>
     </html>
