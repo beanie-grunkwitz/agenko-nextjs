@@ -136,7 +136,7 @@ const About1 = () => {
                             animation: paragraphAnimation ? 'fadeInUp 0.8s ease-out' : 'none',
                             opacity: paragraphAnimation ? 1 : 0,
                             transform: paragraphAnimation ? 'translateY(0)' : 'translateY(30px)'
-                        }}>Headquartered in Gangnam-gu, Seoul, K1 Research is a research-driven one-stop solution provider for Web3 Korean market, providing consulting and implementation services for global projects entering the Korean market. The service content covers localized operations, financing, user growth, brand marketing, business development, offline events, large-scale events and event sponsorship in the Korean market, and is your best partner to enter the Korean market. The K1 core team is a senior expert with many years of experience in Web3 in Korea, and has served many well-known projects. Key supporters of K1 Research include Klein Labs, Aquarius Capital.</p>
+                        }}>K1 Research is a research-driven one-stop partner specializing in Web3 market entry for global projects targeting the Korean market. We offer end-to-end services including localized operations, financing, user acquisition, brand marketing, business development, and event management. Our core team consists of seasoned Web3 experts with extensive experience working with top-tier projects. Key partners include Klein Labs and Aquarius Capital.</p>
                     <div className="agk-button mb-30" style={{
                         animation: buttonAnimation ? 'fadeInUp 0.8s ease-out' : 'none',
                         opacity: buttonAnimation ? 1 : 0,
@@ -181,11 +181,11 @@ const About1 = () => {
                         <div className="agk-image">
                         <Image src="/images/440_532.png" alt="img" width={440} height={532}   />
                         </div>
-                        <div className="agenko-experince-box style-one">
+                        {/* <div className="agenko-experince-box style-one">
                             <p style={{ fontSize: '1.5rem', textAlign:'left', fontWeight: '600' }}>K1.</p>
                             <p style={{ fontSize: '1.5rem', textAlign:'left', fontWeight: '600' }}>Korea.</p>
                             <p style={{ fontSize: '1.5rem', textAlign:'left', fontWeight: '600' }}>Keystone.</p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

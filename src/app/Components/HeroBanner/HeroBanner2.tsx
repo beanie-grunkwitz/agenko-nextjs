@@ -20,10 +20,10 @@ const HeroBanner2 = () => {
     const [imageAnimation, setImageAnimation] = useState(false);
     const [hasAnimated, setHasAnimated] = useState(false);
 
-    const fullText1 = "Think Global.";
-    const fullText2 = "Execute";
-    const fullText3 = "Korean.";
-    const fullParagraph = "K1 Research is Seoul's premier Web3 market intelligence and localization institution, providing comprehensive solutions for global projects entering Korea's dynamic blockchain ecosystem. Powered by Klein Labs.";
+    const fullText1 = "The Key to";
+    const fullText2 = "Your Next";
+    const fullText3 = "Market.";
+    const fullParagraph = "K1 Research is a leading Web3 intelligence and localization partner based in Seoul, offering end-to-end solutions for global projects entering Korea’s fast-evolving blockchain landscape. Backed by Klein Labs.";
 
     useEffect(() => {
         // 创建 IntersectionObserver 来检测元素是否进入视口
@@ -227,7 +227,7 @@ const HeroBanner2 = () => {
             `}</style>
             <section className="agk-hero">
         <div className="hero-wrapper-two">
-            <div className="shape shape-one"><span><Image className="rotate360" src="/assets/images/digital-agency/hero/shape/shape1.svg" alt="img" width={50} height={50}   /></span></div>
+            {/* <div className="shape shape-one"><span><Image className="rotate360" src="/assets/images/digital-agency/hero/shape/shape1.svg" alt="img" width={50} height={50}   /></span></div> */}
             {/* <div className="shape shape-two"><span><Image className="animate-float-bob-y " src="/assets/images/digital-agency/hero/shape/shape2.png" alt="img" width={40} height={80}   /></span></div> */}
             <div className="shape circle-one"><span></span></div>
             <div className="shape circle-two"><span></span></div>

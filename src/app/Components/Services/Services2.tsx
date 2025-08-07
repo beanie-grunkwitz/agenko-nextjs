@@ -242,8 +242,8 @@ const Services2 = () => {
                                             animation: titleAnimation ? 'slideInRight 0.8s ease-out' : 'none',
                                             opacity: titleAnimation ? 1 : 0,
                                             transform: titleAnimation ? 'translateX(0)' : 'translateX(50px)'
-                                        }}>Korean Alpha,  
-                                            Global Beta</h2>
+                                        }}>From Alpha 
+                                            to Action.</h2>
                                     </div>
                                 </div>
                                 <div className="col-lg-5 col-md-12 col-sm-12">
