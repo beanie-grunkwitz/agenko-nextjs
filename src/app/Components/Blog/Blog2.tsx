@@ -352,7 +352,7 @@ const Blog2 = () => {
                                     </div>
                                 </div>
                                 <div className="post-content">
-                                    <h3 className="title"><Link href="/blog/blog-details">{item.title}</Link></h3>
+                                    <h3 className="title"><a href={item.link}>{item.title}</a></h3>
                                     <div className="post-categories">
                                         <a href={item.link}>Mirror</a>
                                     </div>
