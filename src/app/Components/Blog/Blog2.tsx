@@ -246,51 +246,39 @@ const Blog2 = () => {
 
                 /* 响应式高度调整 */
                 @media (max-width: 768px) {
-                    .blog-card {
-                        height: auto;
-                        min-height: 200px;
+                    .mobile-blog-card {
+                        display: block !important;
+                        width: 100%;
+                        height: 100px;
+                        min-height: 100px;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        position: relative;
+                        margin-bottom: 20px;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
                     }
 
-                    .blog-card .post-inner-wrap {
-                        flex-direction: column !important;
-                        justify-content: flex-start !important;
-                        align-items: flex-start !important;
-                        padding: 15px !important;
-                        gap: 8px !important;
+                    .mobile-blog-card:hover {
+                        transform: scale(1.02);
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
                     }
 
-                    .blog-card .author-item {
-                        width: 100% !important;
-                        margin-bottom: 5px !important;
+                    .desktop-blog-card {
+                        display: none !important;
                     }
+                }
 
-                    .blog-card .post-content {
-                        width: 100% !important;
-                        padding: 0 !important;
-                        text-align: left !important;
-                    }
-
-                    .blog-card .post-content .title {
-                        margin-bottom: 3px !important;
-                    }
-
-                    .blog-card .post-categories {
-                        margin-bottom: 3px !important;
-                    }
-
-                    .blog-card .post-date {
-                        width: 100% !important;
-                        justify-content: flex-start !important;
-                        margin-top: 5px !important;
-                    }
-
-                    .blog-card .hover-overlay {
+                @media (min-width: 769px) {
+                    .mobile-blog-card {
                         display: none !important;
                     }
 
-                    .blog-card:hover {
-                        transform: none !important;
-                        box-shadow: none !important;
+                    .desktop-blog-card {
+                        display: block !important;
                     }
                 }
             `}</style>
@@ -335,7 +323,21 @@ const Blog2 = () => {
                 <div className="row">
                 {blogContent.map((item, i) => (
                     <div key={i} className="col-lg-12">
-                        <div className="agenko-blog-item style-one mb-40 pf_fadeup blog-card" style={{ 
+                        {/* 手机版图片卡片 */}
+                        <div 
+                            className="mobile-blog-card"
+                            style={{
+                                backgroundImage: `url(${item.bgImg})`,
+                                animation: blogAnimations[i] ? 'blogCardAppear 0.8s ease-out' : 'none',
+                                opacity: blogAnimations[i] ? 1 : 0,
+                                transform: blogAnimations[i] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.95)'
+                            }}
+                            onClick={() => window.open(item.link, '_blank')}
+                        >
+                        </div>
+
+                        {/* 网页版原有卡片 */}
+                        <div className="agenko-blog-item style-one mb-40 pf_fadeup blog-card desktop-blog-card" style={{ 
                             padding: '5px',
                             animation: blogAnimations[i] ? 'blogCardAppear 0.8s ease-out' : 'none',
                             opacity: blogAnimations[i] ? 1 : 0,
