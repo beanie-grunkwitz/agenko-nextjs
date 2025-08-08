@@ -87,13 +87,6 @@ const WhoWeAre = () => {
                     opacity: ${textAnimation ? 1 : 0};
                     transform: ${textAnimation ? 'translateY(0) scale(1)' : 'translateY(100px) scale(0.8)'};
                 }
-                
-                .big-text h2 {
-                    transition: all 0.3s ease;
-                    font-family: inherit !important;
-                    font-weight: inherit !important;
-                    font-size: inherit !important;
-                }
             `}</style>
             <section className="agk-who-we pb-70">
                 {/* <div className="container">
@@ -139,7 +132,7 @@ const WhoWeAre = () => {
                     <div className="col-lg-12">
                         
                         <div className="big-text text-center mt-80 pt-70">
-                            <h2 className="text-anm-two">DIGITAL MODERN AGENCY</h2>
+                            <h2 className="text-anm-two">SEOUL TO SUCCESS</h2>
                         </div>
                     </div>
                 </div>
