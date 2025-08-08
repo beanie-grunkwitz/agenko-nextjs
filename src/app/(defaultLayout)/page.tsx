@@ -22,6 +22,7 @@ const page = () => {
             </div>
             <div id="service">
                 <Services2></Services2>
+                {/* <Process2></Process2> */}
             </div>
             <div id="client">
                 <Blog2></Blog2>   
@@ -29,8 +30,7 @@ const page = () => {
             <div id="team">
                 {/* <Team2></Team2> */}
             </div>
-            {/* <WhoWeAre></WhoWeAre>
-            <Process2></Process2> */}
+            {/* <WhoWeAre></WhoWeAre> */}
             <Testimonial2></Testimonial2>
             <Faq1></Faq1>
 

@@ -89,13 +89,10 @@ const WhoWeAre = () => {
                 }
                 
                 .big-text h2 {
-                    animation: ${textAnimation ? 'glowPulse 3s ease-in-out infinite' : 'none'};
                     transition: all 0.3s ease;
-                }
-                
-                .big-text h2:hover {
-                    transform: scale(1.05);
-                    text-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.6);
+                    font-family: inherit !important;
+                    font-weight: inherit !important;
+                    font-size: inherit !important;
                 }
             `}</style>
             <section className="agk-who-we pb-70">
@@ -142,7 +139,7 @@ const WhoWeAre = () => {
                     <div className="col-lg-12">
                         
                         <div className="big-text text-center mt-80 pt-70">
-                            <h2 className="text-anm-two">SEOUL TO SUCCESS</h2>
+                            <h2 className="text-anm-two">DIGITAL MODERN AGENCY</h2>
                         </div>
                     </div>
                 </div>

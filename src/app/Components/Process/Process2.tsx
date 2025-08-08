@@ -115,7 +115,6 @@ const Process2 = () => {
                     align-items: center !important;
                     margin-bottom: 15px !important;
                     height: 40px !important;
-                    animation: ${cardAnimations.some(Boolean) ? 'iconBounce 2s ease-in-out infinite' : 'none'};
                 }
                 
                 .agenko-iconic-box .content {
@@ -164,15 +163,14 @@ const Process2 = () => {
                         <div className="col-lg-7">
                             
                             <div className="section-title mb-50 pf_fadeup">
-                                <span className="sub-title">Work Process</span>
-                                <h2>How We Deliver Outstanding 
-                                    High Productivity Results</h2>
+                                <span className="sub-title">Our Services</span>
+                                <h2>From Alpha to Action.</h2>
                             </div>
                         </div>
                         <div className="col-lg-5">
                             
                             <div className="text-box mb-55 pf_fadeup">
-                                <p>Creating cutting-edge digital experience that innovation and functionality to meet the evolving tomorrow&apos;s businesses and users</p>
+                                <p>We are a research-driven consultancy that transforms global blockchain projects into Korean market success stories through our comprehensive suite of localization, marketing, and strategic services.</p>
                             </div>
                         </div>
                     </div>
@@ -185,10 +183,10 @@ const Process2 = () => {
                                 transform: cardAnimations[0] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
                             }}>
                                 <div className="icon">
-                                <i className="bi bi-search"></i>
+                                <i className="bi bi-file-earmark-text"></i>
                                 </div>
                                 <div className="content">
-                                    <p>Research & Analysis<br/>Market research</p>
+                                    <p>Deep Research Report & Premium Localization</p>
                                 </div>
                             </div>
                         </div>
@@ -200,10 +198,10 @@ const Process2 = () => {
                                 transform: cardAnimations[1] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
                             }}>
                                 <div className="icon">
-                                <i className="bi bi-lightbulb"></i>
+                                <i className="bi bi-people"></i>
                                 </div>
                                 <div className="content">
-                                    <p>Strategy & Planning<br/>Develop comprehensive strategies</p>
+                                    <p>Top KOLs and Community Resources</p>
                                 </div>
                             </div>
                         </div>
@@ -215,10 +213,10 @@ const Process2 = () => {
                                 transform: cardAnimations[2] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
                             }}>
                                 <div className="icon">
-                                <i className="bi bi-palette"></i>
+                                <i className="bi bi-megaphone"></i>
                                 </div>
                                 <div className="content">
-                                    <p>Design & Development<br/>Create innovative designs</p>
+                                    <p>Viral Marketing & Media Relations Excellence</p>
                                 </div>
                             </div>
                         </div>
@@ -230,10 +228,10 @@ const Process2 = () => {
                                 transform: cardAnimations[3] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
                             }}>
                                 <div className="icon">
-                                <i className="bi bi-gear"></i>
+                                <i className="bi bi-graph-up"></i>
                                 </div>
                                 <div className="content">
-                                    <p>Testing & Optimization<br/>Rigorous testing protocols</p>
+                                    <p>Full-Cycle TGE Campaign Management</p>
                                 </div>
                             </div>
                         </div>
@@ -245,10 +243,10 @@ const Process2 = () => {
                                 transform: cardAnimations[4] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
                             }}>
                                 <div className="icon">
-                                <i className="bi bi-rocket"></i>
+                                <i className="bi bi-trophy"></i>
                                 </div>
                                 <div className="content">
-                                    <p>Launch & Deploy<br/>Seamless deployment process</p>
+                                    <p>Premium Event Production & Sports Marketing</p>
                                 </div>
                             </div>
                         </div>
@@ -260,10 +258,10 @@ const Process2 = () => {
                                 transform: cardAnimations[5] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
                             }}>
                                 <div className="icon">
-                                <i className="bi bi-headset"></i>
+                                <i className="bi bi-display"></i>
                                 </div>
                                 <div className="content">
-                                    <p>Support & Maintenance<br/>Ongoing technical support</p>
+                                    <p>Strategic Outdoor Media & Digital Advertising</p>
                                 </div>
                             </div>
                         </div>
