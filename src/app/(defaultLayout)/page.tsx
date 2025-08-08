@@ -29,8 +29,8 @@ const page = () => {
             <div id="team">
                 {/* <Team2></Team2> */}
             </div>
-            <WhoWeAre></WhoWeAre>
-            <Process2></Process2>
+            {/* <WhoWeAre></WhoWeAre>
+            <Process2></Process2> */}
             <Testimonial2></Testimonial2>
             <Faq1></Faq1>
 
