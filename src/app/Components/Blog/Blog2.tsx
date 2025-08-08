@@ -294,7 +294,7 @@ const Blog2 = () => {
                     }
                 }
             `}</style>
-            <section className="agk-blogs pt-130 pb-90">
+            <section className="agk-blogs pt-130">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6">
