@@ -156,6 +156,20 @@ const Process2 = () => {
                     opacity: ${titleAnimation ? 1 : 0};
                     transform: ${titleAnimation ? 'translateY(0)' : 'translateY(30px)'};
                 }
+                
+                .row + .row {
+                    margin-top: 30px !important;
+                }
+                
+                @media (max-width: 768px) {
+                    .col-sm-12 {
+                        margin-bottom: 20px !important;
+                    }
+                    
+                    .col-sm-12:last-child {
+                        margin-bottom: 0 !important;
+                    }
+                }
             `}</style>
             <section className="agk-work-process pt-130 pb-100">
                 <div className="container">
@@ -175,9 +189,9 @@ const Process2 = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-xl-2 col-md-6 col-sm-12">
+                        <div className="col-xl-4 col-md-6 col-sm-12">
                             
-                            <div className="agenko-iconic-box style-two mb-40 pf_fadeup" style={{
+                            <div className="agenko-iconic-box style-two pf_fadeup" style={{
                                 animation: cardAnimations[0] ? 'cardAppear 0.8s ease-out' : 'none',
                                 opacity: cardAnimations[0] ? 1 : 0,
                                 transform: cardAnimations[0] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
@@ -190,9 +204,9 @@ const Process2 = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-2 col-md-6 col-sm-12">
+                        <div className="col-xl-4 col-md-6 col-sm-12">
                             
-                            <div className="agenko-iconic-box style-two mb-40 pf_fadeup" style={{
+                            <div className="agenko-iconic-box style-two pf_fadeup" style={{
                                 animation: cardAnimations[1] ? 'cardAppear 0.8s ease-out' : 'none',
                                 opacity: cardAnimations[1] ? 1 : 0,
                                 transform: cardAnimations[1] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
@@ -205,9 +219,9 @@ const Process2 = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-2 col-md-6 col-sm-12">
+                        <div className="col-xl-4 col-md-6 col-sm-12">
                             
-                            <div className="agenko-iconic-box style-two mb-40 pf_fadeup" style={{
+                            <div className="agenko-iconic-box style-two pf_fadeup" style={{
                                 animation: cardAnimations[2] ? 'cardAppear 0.8s ease-out' : 'none',
                                 opacity: cardAnimations[2] ? 1 : 0,
                                 transform: cardAnimations[2] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
@@ -220,9 +234,11 @@ const Process2 = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-2 col-md-6 col-sm-12">
+                    </div>
+                    <div className="row">
+                        <div className="col-xl-4 col-md-6 col-sm-12">
                             
-                            <div className="agenko-iconic-box style-two mb-40 pf_fadeup" style={{
+                            <div className="agenko-iconic-box style-two pf_fadeup" style={{
                                 animation: cardAnimations[3] ? 'cardAppear 0.8s ease-out' : 'none',
                                 opacity: cardAnimations[3] ? 1 : 0,
                                 transform: cardAnimations[3] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
@@ -235,9 +251,9 @@ const Process2 = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-2 col-md-6 col-sm-12">
+                        <div className="col-xl-4 col-md-6 col-sm-12">
                             
-                            <div className="agenko-iconic-box style-two mb-40 pf_fadeup" style={{
+                            <div className="agenko-iconic-box style-two pf_fadeup" style={{
                                 animation: cardAnimations[4] ? 'cardAppear 0.8s ease-out' : 'none',
                                 opacity: cardAnimations[4] ? 1 : 0,
                                 transform: cardAnimations[4] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
@@ -250,9 +266,9 @@ const Process2 = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-2 col-md-6 col-sm-12">
+                        <div className="col-xl-4 col-md-6 col-sm-12">
                             
-                            <div className="agenko-iconic-box style-two mb-40 pf_fadeup" style={{
+                            <div className="agenko-iconic-box style-two pf_fadeup" style={{
                                 animation: cardAnimations[5] ? 'cardAppear 0.8s ease-out' : 'none',
                                 opacity: cardAnimations[5] ? 1 : 0,
                                 transform: cardAnimations[5] ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.9)'
