@@ -17,11 +17,10 @@ const WhoWeAre = () => {
           setIframeSrc('about:blank');
           setToggle(!toggle);
         };
-    return ""
 
     return (
                     <section className="agk-who-we gray-dark pt-130 pb-70">
-                        <div className="container">
+                        {/* <div className="container">
                             <div className="row">
                                 <div className="col-xl-5">
                                     
@@ -59,20 +58,20 @@ const WhoWeAre = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="row">
                             <div className="col-lg-12">
                                 
                                 <div className="big-text text-center mt-80 pt-70">
-                                    <h2 className="text-anm-two">DIGITAL MODERN AGENCY</h2>
+                                    <h2 className="text-anm-two">SEOUL TO SUCCESS</h2>
                                 </div>
                             </div>
                         </div>
-                        <VideoModal
+                        {/* <VideoModal
                             isTrue={toggle}
                             iframeSrc={iframeSrc}
                             handelClose={handelClose}        
-                        ></VideoModal>                        
+                        ></VideoModal>                         */}
                     </section>
     );
 };
