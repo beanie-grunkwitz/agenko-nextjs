@@ -172,7 +172,7 @@ const Process2 = () => {
                         <div className="col-lg-5">
                             
                             <div className="text-box mb-55 pf_fadeup">
-                                <p>Creating cutting-edge digital experience that innovation and functionality to meet the evolving tomorrow's businesses and users</p>
+                                <p>Creating cutting-edge digital experience that innovation and functionality to meet the evolving tomorrow&apos;s businesses and users</p>
                             </div>
                         </div>
                     </div>
